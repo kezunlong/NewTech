@@ -80,19 +80,159 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\main.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\header_bg.gif" />
+    <Content Include="img\newtech_logo.gif" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\bootstrap\affix.js" />
+    <Content Include="js\bootstrap\alert.js" />
+    <Content Include="js\bootstrap\button.js" />
+    <Content Include="js\bootstrap\carousel.js" />
+    <Content Include="js\bootstrap\collapse.js" />
+    <Content Include="js\bootstrap\dropdown.js" />
+    <Content Include="js\bootstrap\modal.js" />
+    <Content Include="js\bootstrap\popover.js" />
+    <Content Include="js\bootstrap\scrollspy.js" />
+    <Content Include="js\bootstrap\tab.js" />
+    <Content Include="js\bootstrap\tests\index.html" />
+    <Content Include="js\bootstrap\tests\unit\affix.js" />
+    <Content Include="js\bootstrap\tests\unit\alert.js" />
+    <Content Include="js\bootstrap\tests\unit\button.js" />
+    <Content Include="js\bootstrap\tests\unit\carousel.js" />
+    <Content Include="js\bootstrap\tests\unit\collapse.js" />
+    <Content Include="js\bootstrap\tests\unit\dropdown.js" />
+    <Content Include="js\bootstrap\tests\unit\modal.js" />
+    <Content Include="js\bootstrap\tests\unit\phantom.js" />
+    <Content Include="js\bootstrap\tests\unit\popover.js" />
+    <Content Include="js\bootstrap\tests\unit\scrollspy.js" />
+    <Content Include="js\bootstrap\tests\unit\tab.js" />
+    <Content Include="js\bootstrap\tests\unit\tooltip.js" />
+    <Content Include="js\bootstrap\tests\vendor\jquery.min.js" />
+    <Content Include="js\bootstrap\tests\vendor\qunit.css" />
+    <Content Include="js\bootstrap\tests\vendor\qunit.js" />
+    <Content Include="js\bootstrap\tests\visual\affix-with-sticky-footer.html" />
+    <Content Include="js\bootstrap\tests\visual\affix.html" />
+    <Content Include="js\bootstrap\tests\visual\alert.html" />
+    <Content Include="js\bootstrap\tests\visual\button.html" />
+    <Content Include="js\bootstrap\tests\visual\carousel.html" />
+    <Content Include="js\bootstrap\tests\visual\collapse.html" />
+    <Content Include="js\bootstrap\tests\visual\dropdown.html" />
+    <Content Include="js\bootstrap\tests\visual\modal.html" />
+    <Content Include="js\bootstrap\tests\visual\popover.html" />
+    <Content Include="js\bootstrap\tests\visual\scrollspy.html" />
+    <Content Include="js\bootstrap\tests\visual\tab.html" />
+    <Content Include="js\bootstrap\tests\visual\tooltip.html" />
+    <Content Include="js\bootstrap\tooltip.js" />
+    <Content Include="js\bootstrap\transition.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\vendor\jquery-1.11.3.min.js" />
+    <Content Include="js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="js\vendor\respond.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AlertMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\.htaccess" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="less\.csscomb.json" />
+    <Content Include="less\.csslintrc" />
+    <Content Include="less\alerts.less" />
+    <Content Include="less\badges.less" />
+    <Content Include="less\bootstrap.less" />
+    <Content Include="less\breadcrumbs.less" />
+    <Content Include="less\button-groups.less" />
+    <Content Include="less\buttons.less" />
+    <Content Include="less\carousel.less" />
+    <Content Include="less\close.less" />
+    <Content Include="less\code.less" />
+    <Content Include="less\component-animations.less" />
+    <Content Include="less\dropdowns.less" />
+    <Content Include="less\forms.less" />
+    <Content Include="less\glyphicons.less" />
+    <Content Include="less\grid.less" />
+    <Content Include="less\input-groups.less" />
+    <Content Include="less\jumbotron.less" />
+    <Content Include="less\labels.less" />
+    <Content Include="less\list-group.less" />
+    <Content Include="less\media.less" />
+    <Content Include="less\mixins.less" />
+    <Content Include="less\mixins\alerts.less" />
+    <Content Include="less\mixins\background-variant.less" />
+    <Content Include="less\mixins\border-radius.less" />
+    <Content Include="less\mixins\buttons.less" />
+    <Content Include="less\mixins\center-block.less" />
+    <Content Include="less\mixins\clearfix.less" />
+    <Content Include="less\mixins\forms.less" />
+    <Content Include="less\mixins\gradients.less" />
+    <Content Include="less\mixins\grid-framework.less" />
+    <Content Include="less\mixins\grid.less" />
+    <Content Include="less\mixins\hide-text.less" />
+    <Content Include="less\mixins\image.less" />
+    <Content Include="less\mixins\labels.less" />
+    <Content Include="less\mixins\list-group.less" />
+    <Content Include="less\mixins\nav-divider.less" />
+    <Content Include="less\mixins\nav-vertical-align.less" />
+    <Content Include="less\mixins\opacity.less" />
+    <Content Include="less\mixins\pagination.less" />
+    <Content Include="less\mixins\panels.less" />
+    <Content Include="less\mixins\progress-bar.less" />
+    <Content Include="less\mixins\reset-filter.less" />
+    <Content Include="less\mixins\reset-text.less" />
+    <Content Include="less\mixins\resize.less" />
+    <Content Include="less\mixins\responsive-visibility.less" />
+    <Content Include="less\mixins\size.less" />
+    <Content Include="less\mixins\tab-focus.less" />
+    <Content Include="less\mixins\table-row.less" />
+    <Content Include="less\mixins\text-emphasis.less" />
+    <Content Include="less\mixins\text-overflow.less" />
+    <Content Include="less\mixins\vendor-prefixes.less" />
+    <Content Include="less\modals.less" />
+    <Content Include="less\navbar.less" />
+    <Content Include="less\navs.less" />
+    <Content Include="less\normalize.less" />
+    <Content Include="less\pager.less" />
+    <Content Include="less\pagination.less" />
+    <Content Include="less\panels.less" />
+    <Content Include="less\popovers.less" />
+    <Content Include="less\print.less" />
+    <Content Include="less\progress-bars.less" />
+    <Content Include="less\responsive-embed.less" />
+    <Content Include="less\responsive-utilities.less" />
+    <Content Include="less\scaffolding.less" />
+    <Content Include="less\tables.less" />
+    <Content Include="less\theme.less" />
+    <Content Include="less\thumbnails.less" />
+    <Content Include="less\tooltip.less" />
+    <Content Include="less\type.less" />
+    <Content Include="less\utilities.less" />
+    <Content Include="less\variables.less" />
+    <Content Include="less\wells.less" />
+    <Content Include="js\bootstrap\.jscsrc" />
+    <Content Include="js\bootstrap\.jshintrc" />
+    <Content Include="js\bootstrap\tests\README.md" />
+    <Content Include="js\bootstrap\tests\unit\.jshintrc" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -102,8 +242,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
