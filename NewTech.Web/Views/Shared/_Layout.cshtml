@@ -28,7 +28,7 @@
     <![endif]-->
 
     <header role="banner">
-        <div class="topheader" style="background-image:url(@Url.Content("~/img/header_bg.gif"))">
+        <div class="topheader">
             <div class="container">
                 <div class="col-sm-6 banner-brand">
                     <img src="@Url.Content("~/img/newtech_logo.gif")" />
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </nav>
-
+        @RenderSection("Carousel", false)
     </header>
 
 
