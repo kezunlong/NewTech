@@ -36,14 +36,14 @@
   display: none; // none by default, but block on "open" of the menu
   float: left;
   min-width: 160px;
-  padding: 5px 0;
+  padding: 5px;
   margin: 2px 0 0; // override default ul
   list-style: none;
   font-size: @font-size-base;
   text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
   background-color: @dropdown-bg;
-  border: 1px solid @dropdown-fallback-border; // IE8 fallback
-  border: 1px solid @dropdown-border;
+  border: 0px solid @dropdown-fallback-border; // IE8 fallback      // 1px => 0px vincent
+  border: 0px solid @dropdown-border;                               // 1px => 0px vincent
   border-radius: @border-radius-base;
   .box-shadow(0 6px 12px rgba(0,0,0,.175));
   background-clip: padding-box;
@@ -64,12 +64,17 @@
   // Links within the dropdown menu
   > li > a {
     display: block;
-    padding: 3px 20px;
+    padding: 5px 20px;      // 3px 20px; vincent
     clear: both;
     font-weight: normal;
     line-height: @line-height-base;
     color: @dropdown-link-color;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
+    border-bottom: 1px solid #eee;      // added vincent
+  }
+
+  > li:last-child > a {     // added vincent
+      border-bottom: 0;
   }
 }
 
@@ -79,7 +84,7 @@
   &:focus {
     text-decoration: none;
     color: @dropdown-link-hover-color;
-    background-color: @dropdown-link-hover-bg;
+    background-color: #eee;
   }
 }
 
