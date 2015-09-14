@@ -26,11 +26,11 @@
 
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="icon fa fa-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
     <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="icon fa fa-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
 </div>
@@ -38,19 +38,63 @@
 
 <div class="row">
     <div class="col-md-9">
-        新科软件是一家基于上海的高新软件信息公司，致力于为客户按时提供高质量、可维护和经济的软件产品和服务。我们是一群充满活力和梦想的年轻人和创业者，通过多年的技术积累，获得了丰富的软件开发经验和项目管理能力。想客户之所想，我们通过高品质的软件产品为您提供了行业的领先优势，为客户的业务发展提供了可靠和高效的技术支持。
+        <b>新科软件</b>是一家基于上海的高新软件信息公司，致力于为客户按时提供高质量、可维护和经济的软件产品和服务。我们是一群充满活力和梦想的年轻人和创业者，通过多年的技术积累，获得了丰富的软件开发经验和项目管理能力。想客户之所想，我们通过高品质的软件产品为您提供了行业的领先优势，为客户的业务发展提供了可靠和高效的技术支持。
         <hr />
         <div class="col-md-4" style="border-right:1px solid #eee">
-            Services we offer
+            <div class="box-title"><span class="sprites ic-services"></span>我们提供的服务</div>
+            <ul class="unordered">
+                <li>@Html.ActionLink("系统架构和应用程序开发", "ApplicationDevelopment", "Service")</li>
+                <li>@Html.ActionLink("Web网站开发", "WebDevelopment", "Service")</li>
+                <li>@Html.ActionLink("应用程序维护", "ApplicationMaintenance", "Service")</li>
+                <li>@Html.ActionLink("Microsoft .NET", "MicrosoftDotNet", "Technology")</li>
+                <li>@Html.ActionLink("Java 开发", "JavaDevelopment", "Technology")</li>
+                <li>@Html.ActionLink("PHP/MySQL", "PhpMySql", "Technology")</li>
+                <li>@Html.ActionLink("Sharepoint 开发", "SharepointDevelopment", "Technology")</li>
+                <li>@Html.ActionLink("iPhone 开发", "iPhoneDevelopment", "Technology")</li>
+            </ul>
         </div>
         <div class="col-md-4" style="border-right:1px solid #eee">
-            Services we offer
+            <div class="box-title"><span class="sprites ic-services"></span>我们的优势</div>
+            <ul class="unordered">
+                <li>客户至上的服务理念</li>
+                <li>超过10年工作经验的开发人员</li>
+                <li>紧跟信息发展潮流</li>
+                <li>追求卓越，永不止步</li>
+                <li>多样化的专业技能和业务知识</li>
+                <li>知识产权的良好保护</li>
+                <li>与客户建立长期稳定的合作关系</li>
+            </ul>
         </div>
         <div class="col-md-4">
-            Services we offer
+            <div class="box-title"><span class="sprites ic-services"></span>技术专长</div>
+            <ul class="unordered">
+                <li>.NET Technologies - C#, ASP.NET, VB.NET, SQL Server</li>
+                <li>JAVA & J2EE</li>
+                <li>Oracle Database/Application Express</li>
+                <li>SharePoint server/ MOSS</li>
+                <li>iPhone, Android & Mobile App</li>
+                <li>LAMP/WAMP - PHP, MySql</li>
+                <li>SOA & SaaS</li>
+            </ul>
         </div>
     </div>
     <div class="col-md-3">
-        Request For Proposal
+        <div class="rsbox">
+            <div class="request-title">
+                <a title="投标申请/报价咨询" href='@Url.Action("RequestForProposal", "Home")'><span class="msg_icon sprites"></span>投标申请/报价咨询</a>
+            </div>
+            <div class="callus-title">
+                <span class="call sprites"></span>联系我们
+            </div>
+            <div class="rsbg">
+                <span class="nrmlfont">USA </span>+1 909 680 3050<br><br>
+                <span class="nrmlfont">Australia </span>+61 2 9844 5446<br><br>
+                <span class="nrmlfont">UK </span>+44 (0)208 144 9502<br><br>
+                <span class="nrmlfont">Sweden </span>+46 (0)851 970 707<br><br>
+                <span class="nrmlfont">Denmark </span>+45 6574 6764<br><br>
+                <span class="nrmlfont">Finland </span>+358 92 316 1011<br><br>
+                <span class="nrmlfont">India </span>+91 79 40038222
+            </div>
+        </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 0;
     padding-bottom: 20px;
+    color: #3a3a3a;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -14,11 +15,90 @@
     margin: 10px 0;
 }
 
-.carousel-inner {
-    /*height: 320px;*/
+.box-title {
+    color: #555;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-.carousel-inner img {
-    width:100%;
-    height:100%;
+.sprites {
+    background: url(../img/sprites.png) no-repeat;
 }
+
+.ic-services {
+    width: 25px;
+    height: 25px;
+    background-position: 0 -24px;
+    display: inline-block;
+    vertical-align: -6px;
+    margin-right: 6px;
+}
+
+ul.unordered {
+    padding: 5px 0px 0px 5px;
+    margin: 0px;
+    list-style: none;
+}
+
+ul.unordered li {
+    padding: 0px 0px 0px 12px;
+    margin: 7px 0px 7px 0px;
+    background: url(../img/sublink_bul.gif) no-repeat 0px 6px;
+    line-height: 16px;
+}
+
+.rsbox {
+    margin-bottom: 10px;
+}
+.request-title, .callus-title {
+    background: url(../img/rtarrow.gif) no-repeat scroll right 50% #3F6289;
+    font-size: 16px;
+    height: 35px;
+    line-height: 32px;
+    margin: 0;
+    padding: 0 0 0 14px;
+}
+.request-title a {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+}
+.msg_icon {
+    width: 23px;
+    height: 15px;
+    background-position: 0 -50px;
+    display: inline-block;
+    vertical-align: -3px;
+    margin-right: 8px;
+}
+.callus-title {
+    background: url(../img/down-ar.gif) no-repeat scroll right 50% #3F6289;
+    border-top: 1px solid #AABBCE;
+    color: #ffffff;
+    font-size: 13px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0;
+    padding: 0 0 0 14px;
+}
+.call {
+    width: 23px;
+    height: 23px;
+    background-position: 0 0;
+    display: inline-block;
+    vertical-align: -6px;
+    margin-right: 8px;
+}
+.rsbg {
+    background: none repeat scroll 0 0 #E8ECF3;
+    color: #333333;
+    line-height: 14px;
+    padding: 15px 10px;
+}
+
+
+
+

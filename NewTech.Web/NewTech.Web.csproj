@@ -85,13 +85,19 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\bg.gif" />
+    <Content Include="img\down-ar.gif" />
     <Content Include="img\header_bg.gif" />
     <Content Include="img\industry.jpg" />
     <Content Include="img\mobile-technology.jpg" />
     <Content Include="img\newtech_logo.gif" />
+    <Content Include="img\rtarrow.gif" />
     <Content Include="img\sculpting-thoughts.jpg" />
     <Content Include="img\software-development.jpg" />
+    <Content Include="img\sprites.png" />
+    <Content Include="img\sublink_bul.gif" />
     <Content Include="img\technology.jpg" />
+    <Content Include="js\bootstrap-hover-dropdown.js" />
+    <Content Include="js\bootstrap-hover-dropdown.min.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\bootstrap\affix.js" />
     <Content Include="js\bootstrap\alert.js" />
@@ -287,6 +293,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="less\_carousel.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
