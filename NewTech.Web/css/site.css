@@ -99,6 +99,9 @@ ul.unordered li {
     padding: 15px 10px;
 }
 
+div.no-radius {
+    border-radius: 0;
+}
 
 
 
