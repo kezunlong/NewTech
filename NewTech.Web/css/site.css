@@ -50,22 +50,6 @@ ul.unordered li {
     line-height: 16px;
 }
 
-.rsbox {
-    margin-bottom: 10px;
-}
-.request-title, .callus-title {
-    background: url(../img/rtarrow.gif) no-repeat scroll right 50% #3F6289;
-    font-size: 16px;
-    height: 35px;
-    line-height: 32px;
-    margin: 0;
-    padding: 0 0 0 14px;
-}
-.request-title a {
-    display: block;
-    color: #ffffff;
-    font-size: 13px;
-}
 .msg_icon {
     width: 23px;
     height: 15px;
@@ -74,23 +58,12 @@ ul.unordered li {
     vertical-align: -3px;
     margin-right: 8px;
 }
-.callus-title {
-    background: url(../img/down-ar.gif) no-repeat scroll right 50% #3F6289;
-    border-top: 1px solid #AABBCE;
-    color: #ffffff;
-    font-size: 13px;
-    height: 35px;
-    line-height: 35px;
-    margin: 0;
-    padding: 0 0 0 14px;
+
+div.no-radius {
+    border-radius: 0;
 }
-.call {
-    width: 23px;
-    height: 23px;
-    background-position: 0 0;
-    display: inline-block;
-    vertical-align: -6px;
-    margin-right: 8px;
+.panel-heading span, .panel-heading a {
+    color: #ffffff;
 }
 .rsbg {
     background: none repeat scroll 0 0 #E8ECF3;
@@ -98,10 +71,14 @@ ul.unordered li {
     line-height: 14px;
     padding: 15px 10px;
 }
-
-div.no-radius {
-    border-radius: 0;
+.request-title {
+    background: url(../img/rtarrow.gif) no-repeat scroll right 50% #3F6289;
 }
-
-
-
+.callus-title {
+    background: url(../img/down-ar.gif) no-repeat scroll right 50% #3F6289;
+}
+.imgbdr {
+    padding: 5px;
+    border: #e7e7e7 solid 1px;
+    background: #FFF;
+}
