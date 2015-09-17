@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\NewTechnology.sql" />
     <Content Include="css\main.css" />
     <Content Include="css\site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -148,10 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\SessionHelper.cs" />
     <Compile Include="Models\AlertMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -295,6 +299,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="less\_carousel.less" />
     <Content Include="less\_panels.less" />
+    <Content Include="Views\Admin\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -303,7 +308,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\lifepoem-foundation\Lifepoem.Foundation.Utilities\Lifepoem.Foundation.Utilities.csproj">
+      <Project>{6c0e0a30-125d-4d8c-bfa1-e0b3e5cfc35f}</Project>
+      <Name>Lifepoem.Foundation.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewTech.BLL\NewTech.BLL.csproj">
+      <Project>{e96edc66-e56d-4e7b-8326-9a16b22e76eb}</Project>
+      <Name>NewTech.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewTech.Model\NewTech.Model.csproj">
+      <Project>{cff8f3fe-5235-4728-9035-3167f6808793}</Project>
+      <Name>NewTech.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
