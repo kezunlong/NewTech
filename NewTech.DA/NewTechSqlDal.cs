@@ -102,6 +102,19 @@ namespace NewTech.DA
                 return userRepository;
             }
         }
+
+        private DictRepository dictRepository;
+        public DictRepository DictRepository
+        {
+            get
+            {
+                if (dictRepository == null)
+                {
+                    dictRepository = new DictRepository(this);
+                }
+                return dictRepository;
+            }
+        }
         
         #endregion
     }

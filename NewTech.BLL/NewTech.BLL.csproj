@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="AppConfig.cs" />
     <Compile Include="BaseManager.cs" />
+    <Compile Include="CacheDataManager.cs" />
+    <Compile Include="DictManager.cs" />
     <Compile Include="NewTechBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
