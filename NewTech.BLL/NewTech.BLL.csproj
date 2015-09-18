@@ -45,6 +45,7 @@
     <Compile Include="CacheDataManager.cs" />
     <Compile Include="DictManager.cs" />
     <Compile Include="NewTechBll.cs" />
+    <Compile Include="ProjectManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>

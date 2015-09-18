@@ -115,7 +115,20 @@ namespace NewTech.DA
                 return dictRepository;
             }
         }
-        
+
+        private ProjectRepository projectRepository;
+        public ProjectRepository ProjectRepository
+        {
+            get
+            {
+                if (projectRepository == null)
+                {
+                    projectRepository = new ProjectRepository(this);
+                }
+                return projectRepository;
+            }
+        }
+
         #endregion
     }
 }

@@ -50,6 +50,13 @@ ul.unordered li {
     line-height: 16px;
 }
 
+ul.columnflexible 
+{
+    float: left;
+    margin-right: 40px;
+}
+
+
 .msg_icon {
     width: 23px;
     height: 15px;

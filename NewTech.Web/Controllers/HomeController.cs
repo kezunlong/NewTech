@@ -6,11 +6,13 @@ using System.Web.Mvc;
 
 namespace NewTech.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.ServicedIndustries = bll.ProjectManager.SelectServicedIndustries();
+
             return View();
         }
     }

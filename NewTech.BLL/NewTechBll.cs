@@ -95,6 +95,31 @@ namespace NewTech.BLL
             }
         }
 
+        private DictManager dictManager;
+        public DictManager DictManager
+        {
+            get
+            {
+                if (dictManager == null)
+                {
+                    dictManager = new DictManager(this);
+                }
+                return dictManager;
+            }
+        }
+
+        private ProjectManager projectManager;
+        public ProjectManager ProjectManager
+        {
+            get
+            {
+                if (projectManager == null)
+                {
+                    projectManager = new ProjectManager(this);
+                }
+                return projectManager;
+            }
+        }
 
         #endregion
 
