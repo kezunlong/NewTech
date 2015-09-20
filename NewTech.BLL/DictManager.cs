@@ -16,6 +16,11 @@ namespace NewTech.BLL
             return CacheDataManager.Instance.Dicts;
         }
 
+        public List<Dict> SelectDicts(string category)
+        {
+            return CacheDataManager.Instance.Dicts.Where(item => item.Category == category).ToList();
+        }
+
         public Dict SelectDict(string id)
         {
             return CacheDataManager.Instance.FindDict(id);

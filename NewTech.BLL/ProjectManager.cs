@@ -1,4 +1,5 @@
-﻿using NewTech.Model;
+﻿using Lifepoem.Foundation.Utilities.DBHelpers;
+using NewTech.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,24 @@ namespace NewTech.BLL
     {
         public ProjectManager(NewTechBll bll) : base(bll) { }
 
-        public List<Project> SelectProjects()
+        public List<Project> SelectProjects(ProjectFilter filter, PagingOption option)
         {
-            var list = _dal.ProjectRepository.SelectProjects();
+            var list = _dal.ProjectRepository.SelectProjects(filter, option);
             foreach(Project item in list)
             {
                 FillReferenceProperties(item);
             }
             return list;
+        }
+
+        public Project SelectProject(int id)
+        {
+            var item = _dal.ProjectRepository.SelectProject(id);
+            if(item != null)
+            {
+                FillReferenceProperties(item);
+            }
+            return item;
         }
 
         private void FillReferenceProperties(Project item)
@@ -35,5 +46,42 @@ namespace NewTech.BLL
             return _bll.DictManager.SelectDicts().Where(dict => list.Contains(dict.Id)).ToList();
         }
 
+        public List<Dict> SelectServicedApplicationCategories()
+        {
+            List<string> list = _dal.ProjectRepository.SelectServicedApplicationCategories();
+            return _bll.DictManager.SelectDicts().Where(dict => list.Contains(dict.Id)).ToList();
+        }
+        
+        public void InsertProject(Project item)
+        {
+            var existsItem = _dal.ProjectRepository.SelectProject(item.Name);
+            if (existsItem != null)
+            {
+                string message = string.Format("Project (Name = {0}) exists.", item.Name);
+                throw new Exception(message);
+            }
+            _dal.ProjectRepository.InsertProject(item);
+        }
+
+        public void UpdateProject(Project item)
+        {
+            var existsItem = _dal.ProjectRepository.SelectProject(item.Name);
+            if (existsItem != null && existsItem.Id != item.Id)
+            {
+                string message = string.Format("Project (Name = {0}) exists.", item.Name);
+                throw new Exception(message);
+            }
+            _dal.ProjectRepository.UpdateProject(item);
+        }
+
+        public Project DeleteProject(int id)
+        {
+            var item = SelectProject(id);
+            if (item != null)
+            {
+                _dal.ProjectRepository.DeleteProject(id);
+            }
+            return item;
+        }
     }
 }

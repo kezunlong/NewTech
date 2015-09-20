@@ -15,6 +15,18 @@
     margin: 10px 0;
 }
 
+.query-form input, .query-form select {
+    margin-right: 10px;
+}
+
+div.edit-form {
+    padding: 15px 30px;
+}
+
+dt {
+    margin-top: 10px;
+}
+
 .box-title {
     color: #555;
     font-size: 15px;
@@ -66,12 +78,17 @@ ul.columnflexible
     margin-right: 8px;
 }
 
-div.no-radius {
+.panel-default > div.right-panel-heading {
     border-radius: 0;
+    background-color: #3F6289;
 }
-.panel-heading span, .panel-heading a {
+.right-panel-heading span, .right-panel-heading a {
     color: #ffffff;
 }
+.no-radius {
+    border-radius: 0;
+}
+
 .rsbg {
     background: none repeat scroll 0 0 #E8ECF3;
     color: #333333;

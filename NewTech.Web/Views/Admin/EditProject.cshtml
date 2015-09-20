@@ -1,0 +1,46 @@
+﻿@model NewTech.Web.Models.ProjectViewModel
+
+@{
+    bool isEdit = Model.Project.Id != 0;
+    string operation = isEdit ? "Edit Project:" : "Create New Project";
+    ViewBag.Title = operation;
+}
+
+<h4>@operation @Model.Project.Name</h4>
+
+<div class="panel panel-default">
+    @using (Html.BeginForm("EditProject", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div class="panel-body edit-form">
+            @Html.ValidationSummary()
+            @Html.HiddenFor(item => item.Project.Id)
+
+            <div class="form-group">
+                @Html.TextBoxWithLabelFor(item => item.Project.Name)
+            </div>
+            <div class="form-group">
+                @Html.DropDownListWithLabelFor(item => item.Project.Category, Model.Categories.ToSelectListItems(x => x.Name, x => x.Id))
+            </div>
+            <div class="form-group">
+                @Html.DropDownListWithLabelFor(item => item.Project.Industry, Model.Industries.ToSelectListItems(x => x.Name, x => x.Id))
+            </div>
+            <div class="form-group">
+                @Html.TextBoxWithLabelFor(item => item.Project.ThumbImage)
+            </div>
+            <div class="form-group">
+                @Html.TextBoxWithLabelFor(item => item.Project.Description)
+            </div>
+            <div class="form-group">
+                @Html.TextAreaWithLabelFor(item => item.Project.Contents)
+            </div>
+        </div>
+
+        <div class="panel-footer text-center">
+            <button type="submit" class="btn btn-primary">
+                <span class="icon fa fa-save"></span>
+                Save
+            </button>
+            @Html.ActionLink("Return", "Projects", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

@@ -155,8 +155,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CustomHelper.cs" />
+    <Compile Include="Infrastructure\MvcPaging.cs" />
     <Compile Include="Infrastructure\SessionHelper.cs" />
     <Compile Include="Models\AlertMessage.cs" />
+    <Compile Include="Models\ProjectsViewModel.cs" />
+    <Compile Include="Models\ProjectViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -300,6 +304,9 @@
     <Content Include="less\_carousel.less" />
     <Content Include="less\_panels.less" />
     <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Projects.cshtml" />
+    <Content Include="Views\Admin\ProjectsList.cshtml" />
+    <Content Include="Views\Admin\EditProject.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

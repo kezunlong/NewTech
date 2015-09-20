@@ -1,4 +1,7 @@
-﻿using NewTech.Web.Models;
+﻿using Lifepoem.Foundation.Utilities.DBHelpers;
+using Lifepoem.Foundation.Utilities.Helpers;
+using NewTech.Model;
+using NewTech.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,10 +54,88 @@ namespace NewTech.Web.Controllers
             }
         }
 
-        public ActionResult Projects()
-        {
+        #region Projects
 
-            return View();
+        public ActionResult Projects(ProjectFilter filter)
+        {
+            var model = new ProjectsViewModel
+            {
+                Filter = filter,
+                ServicedApplicationCategories = bll.ProjectManager.SelectServicedApplicationCategories(),
+                ServicedIndustries = bll.ProjectManager.SelectServicedIndustries()
+            };
+            return View(model);
         }
+
+        public ActionResult ProjectsList(ProjectFilter filter, int page = 1)
+        {
+            PagingOption option = GetPagingOption(page);
+
+            var model = new ProjectsViewModel
+            {
+                Projects = bll.ProjectManager.SelectProjects(filter, option),
+                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize, TotalItems = option.RecordCount }
+            };
+
+            return PartialView(model);
+        }
+
+
+        public ActionResult EditProject(int id)
+        {
+            var model = new ProjectViewModel { Project = bll.ProjectManager.SelectProject(id) };
+            FillAdditionalProperties(model);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditProject([Bind(Prefix = "Project")]Project item)
+        {
+            if (ModelState.IsValid)
+            {
+                if (item.Id != 0)
+                {
+                    bll.ProjectManager.UpdateProject(item);
+                }
+                else
+                {
+                    bll.ProjectManager.InsertProject(item);
+                }
+
+                TempData["message"] = new AlertMessage(string.Format("{0} has been saved", item.Name));
+                return RedirectToAction("Projects");
+            }
+            else
+            {
+                var model = new ProjectViewModel { Project = item };
+                FillAdditionalProperties(model);
+                return View(model);
+            }
+        }
+
+        public ActionResult CreateProject()
+        {
+            var model = new ProjectViewModel { Project = new Project() };
+            FillAdditionalProperties(model);
+            return View("EditProject", model);
+        }
+
+        public ActionResult DeleteProject(int id)
+        {
+            var item = bll.ProjectManager.DeleteProject(id);
+            if (item != null)
+            {
+                TempData["message"] = new AlertMessage(string.Format("{0} has been deleted", item.Name));
+            }
+            return RedirectToAction("Projects");
+        }
+
+        private void FillAdditionalProperties(ProjectViewModel model)
+        {
+            model.Categories = bll.DictManager.SelectDicts("Category");
+            model.Industries = bll.DictManager.SelectDicts("Industry");
+        }
+
+        #endregion
     }
 }

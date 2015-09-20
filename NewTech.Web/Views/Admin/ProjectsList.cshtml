@@ -1,0 +1,32 @@
+﻿@model NewTech.Web.Models.ProjectsViewModel
+
+<table class="table table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Industry</th>
+            <th>Description</th>
+            <th class="text-center" style="width:100px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Projects)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.Name, "EditProject", new { item.Id })</td>
+                <td>@if (item.CategoryRef != null) { @item.CategoryRef.Name }</td>
+                <td>@if (item.IndustryRef != null) { @item.IndustryRef.Name }</td>
+                <td>@item.Description</td>
+                <td class="text-center">
+                    <a href="@Url.Action("DeleteProject", "Admin", new { id = item.Id })" onclick="return confirm('Are you sure to delete this Project?');">
+                        <span class="icon fa fa-remove"></span> Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="pull-right">
+    @Html.AjaxPagination(Model.PagingOption)
+</div>
