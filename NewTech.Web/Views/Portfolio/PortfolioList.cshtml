@@ -1,0 +1,16 @@
+﻿@model NewTech.Web.Models.ProjectsViewModel
+
+@foreach (var item in Model.Projects)
+{
+    <div class="row">
+        <div>
+            <img src="~/img/project1.jpg" />
+        </div>
+        <div>
+            @item.Name
+        </div>
+    </div>
+}
+<div class="pull-right">
+    @Html.AjaxPagination(Model.PagingOption)
+</div>

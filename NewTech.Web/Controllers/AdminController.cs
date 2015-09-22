@@ -12,6 +12,8 @@ namespace NewTech.Web.Controllers
 {
     public class AdminController : BaseController
     {
+        #region Login
+
         [HttpGet]
         public ActionResult Login()
         {
@@ -53,6 +55,8 @@ namespace NewTech.Web.Controllers
                 return RedirectToAction("Projects");
             }
         }
+
+        #endregion
 
         #region Projects
 

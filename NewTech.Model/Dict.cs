@@ -13,6 +13,7 @@ namespace NewTech.Model
         public string Name { get; set; }
         public string Remark { get; set; }
         public int Order { get; set; }
+        public string Parent { get; set; }
         public bool Status { get; set; }
     }
 }

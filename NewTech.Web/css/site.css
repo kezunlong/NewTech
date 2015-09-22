@@ -1,6 +1,6 @@
 ﻿body {
     padding-top: 0;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     color: #3a3a3a;
 }
 
@@ -14,6 +14,28 @@
 .topheader  {
     margin: 10px 0;
 }
+
+footer {
+    background: #f0f0f0;
+    border-top: 1px solid #d2d2d2;
+    color: #464646;
+    padding: 10px 0;
+    overflow: hidden;
+}
+.footlink a {
+    color: #464646;
+}
+.footlink span {
+    padding: 0 10px;
+}
+.footcopyright {
+    color: #464646;
+    font-size: 12px;
+    line-height: 17px;
+    margin: 0;
+    padding: 15px 0 0;
+}
+
 
 .query-form input, .query-form select {
     margin-right: 10px;

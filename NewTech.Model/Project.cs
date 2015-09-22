@@ -32,6 +32,7 @@ namespace NewTech.Model
         public string Name { get; set; }
         public string Category { get; set; }
         public string Industry { get; set; }
+        public string Technology { get; set; }
         public bool? Status { get; set; }
 
         public string GetFilterString()
@@ -51,6 +52,12 @@ namespace NewTech.Model
             if (!string.IsNullOrEmpty(Industry))
             {
                 where += string.Format(" AND Industry = '{0}'", Industry);
+            }
+
+            if(!string.IsNullOrEmpty(Technology))
+            {
+                where += string.Format(" AND Id IN (SELECT DISTINCT ProjectId FROM [dbo].[ProjectTechnologies] WHERE TechnologyId IN (SELECT Id FROM [dbo].[Dict] WHERE [Parent] = '{0}'))", Technology);
+                
             }
 
             if(Status.HasValue)

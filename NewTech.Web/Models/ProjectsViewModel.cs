@@ -14,5 +14,6 @@ namespace NewTech.Web.Models
         public WebPagingOption PagingOption { get; set; }
         public IEnumerable<Dict> ServicedIndustries { get; set; }
         public IEnumerable<Dict> ServicedApplicationCategories { get; set; }
+        public IEnumerable<Dict> Technologies { get; set; }
     }
 }

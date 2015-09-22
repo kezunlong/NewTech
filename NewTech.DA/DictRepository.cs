@@ -38,6 +38,7 @@ namespace NewTech.DA
                 Name = Tools.ConvertString(row["Name"]),
                 Remark = Tools.ConvertString(row["Remark"]),
                 Order = Tools.Convert(row["Order"], 0),
+                Parent = Tools.ConvertString(row["Parent"]),
                 Status = Tools.Convert(row["Status"], 0) == 1
             };
         }

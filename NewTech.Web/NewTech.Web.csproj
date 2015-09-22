@@ -85,17 +85,23 @@
     <Content Include="css\site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\banner-inn.jpg" />
     <Content Include="img\bg.gif" />
+    <Content Include="img\development.png" />
+    <Content Include="img\dmca_protected_sml_120m.png" />
     <Content Include="img\down-ar.gif" />
     <Content Include="img\header_bg.gif" />
     <Content Include="img\industry.jpg" />
     <Content Include="img\mobile-technology.jpg" />
+    <Content Include="img\nasscom-member.png" />
     <Content Include="img\newtech_logo.gif" />
+    <Content Include="img\project1.jpg" />
     <Content Include="img\rtarrow.gif" />
     <Content Include="img\sculpting-thoughts.jpg" />
     <Content Include="img\software-development.jpg" />
     <Content Include="img\sprites.png" />
     <Content Include="img\sublink_bul.gif" />
+    <Content Include="img\tabbg.gif" />
     <Content Include="img\technology.jpg" />
     <Content Include="js\bootstrap-hover-dropdown.js" />
     <Content Include="js\bootstrap-hover-dropdown.min.js" />
@@ -152,6 +158,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -307,6 +314,11 @@
     <Content Include="Views\Admin\Projects.cshtml" />
     <Content Include="Views\Admin\ProjectsList.cshtml" />
     <Content Include="Views\Admin\EditProject.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\Shared\_BaseLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Portfolio\PortfolioList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
