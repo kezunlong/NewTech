@@ -2,14 +2,32 @@
 
 @foreach (var item in Model.Projects)
 {
-    <div class="row">
-        <div>
-            <img src="~/img/project1.jpg" />
+    <div class="portbox">
+        <div class="portleft">
+            <a href='@Url.Action("Item", "Portfolio", new { Id = item.Id })'>
+                <img src="~/img/project1.jpg" />
+            </a>
         </div>
-        <div>
-            @item.Name
+        <div class="portright">
+            <span class="port-title">
+                @Html.ActionLink(item.Name, "Item", new { Id = item.Id })
+            </span>
+            <p>
+                <b>Category: </b>@item.CategoryRef.Name
+                <br />
+                <b>Technologies: </b>@string.Join(", ", item.TechnologyRefs.Select(x => x.Name))
+            </p>
+            <p>
+                <b>Description: </b>@item.Description
+            </p>
+            <div class="text-right">
+                <a href='@Url.Action("Item", "Portfolio", new { Id = item.Id })' class="btn btn-default btn-primary">
+                    查看明细 <span class="icon fa fa-caret-right"></span>
+                </a>    
+            </div>
         </div>
     </div>
+    <hr class="dotted" />
 }
 <div class="pull-right">
     @Html.AjaxPagination(Model.PagingOption)

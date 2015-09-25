@@ -319,6 +319,7 @@
     <Content Include="Views\Shared\_Layout - Copy.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Portfolio\PortfolioList.cshtml" />
+    <Content Include="less\_navs.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

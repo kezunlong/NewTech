@@ -69,7 +69,7 @@ namespace NewTech.DA
                 Id = Tools.Convert(row["Id"], 0),
                 Name = Tools.ConvertString(row["Name"]),
                 Category = Tools.ConvertString(row["Category"]),
-                Industry = Tools.ConvertString(row["Industry"]),
+                Customer = Tools.Convert(row["Customer"], 0),
                 ThumbImage = Tools.ConvertString(row["ThumbImage"]),
                 Description = Tools.ConvertString(row["Description"]),
                 Contents = Tools.ConvertString(row["Contents"]),
@@ -91,46 +91,6 @@ namespace NewTech.DA
                 if (!string.IsNullOrEmpty(item))
                 {
                     list.Add(item);
-                }
-            }
-
-            return list;
-        }
-
-        public List<string> SelectServicedIndustries()
-        {
-            List<string> list = new List<string>();
-
-            sqlProc.Clear();
-            sqlProc.CommandText = "SELECT DISTINCT Industry FROM [dbo].[Projects]";
-            sqlProc.CommandType = CommandType.Text;
-            var table = sqlProc.ExecuteDataTable();
-            foreach(DataRow row in table.Rows)
-            {
-                var industry = Tools.ConvertString(row["Industry"]);
-                if(!string.IsNullOrEmpty(industry))
-                {
-                    list.Add(industry);
-                }
-            }
-
-            return list;
-        }
-
-        public List<string> SelectTestServicedIndustries()
-        {
-            List<string> list = new List<string>();
-
-            sqlProc.Clear();
-            sqlProc.CommandText = "SELECT Id FROM [dbo].[Dict] WHERE Category = 'Industry'";
-            sqlProc.CommandType = CommandType.Text;
-            var table = sqlProc.ExecuteDataTable();
-            foreach (DataRow row in table.Rows)
-            {
-                var industry = Tools.ConvertString(row["Id"]);
-                if (!string.IsNullOrEmpty(industry))
-                {
-                    list.Add(industry);
                 }
             }
 
@@ -163,7 +123,7 @@ namespace NewTech.DA
             sqlProc.CommandText = @"INSERT INTO [dbo].[Projects]
     ([Name]
     ,[Category]
-    ,[Industry]
+    ,[Customer]
     ,[ThumbImage]
     ,[Description]
     ,[Contents]
@@ -171,7 +131,7 @@ namespace NewTech.DA
 VALUES
     (@Name
     ,@Category
-    ,@Industry
+    ,@Customer
     ,@ThumbImage
     ,@Description
     ,@Contents
@@ -187,7 +147,7 @@ VALUES
             sqlProc.CommandText = @"UPDATE [dbo].[Projects]
 SET [Name] = @Name
     ,[Category] = @Category
-    ,[Industry] = @Industry
+    ,[Customer] = @Customer
     ,[ThumbImage] = @ThumbImage
     ,[Description] = @Description
     ,[Contents] = @Contents
@@ -212,7 +172,7 @@ WHERE Id = @Id";
         {
             sqlProc.Parameters.AddWithValue("Name", item.Name);
             sqlProc.Parameters.AddWithValue("Category", item.Category);
-            sqlProc.Parameters.AddWithValue("Industry", item.Industry);
+            sqlProc.Parameters.AddWithValue("Customer", item.Customer);
             sqlProc.Parameters.AddWithValue("ThumbImage", item.ThumbImage);
             sqlProc.Parameters.AddWithValue("Description", item.Description);
             sqlProc.Parameters.AddWithValue("Contents", item.Contents);

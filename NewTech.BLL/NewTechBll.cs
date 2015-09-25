@@ -95,6 +95,19 @@ namespace NewTech.BLL
             }
         }
 
+        private CustomerManager customerManager;
+        public CustomerManager CustomerManager
+        {
+            get
+            {
+                if (customerManager == null)
+                {
+                    customerManager = new CustomerManager(this);
+                }
+                return customerManager;
+            }
+        }
+
         private DictManager dictManager;
         public DictManager DictManager
         {

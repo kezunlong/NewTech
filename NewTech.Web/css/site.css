@@ -128,3 +128,36 @@ ul.columnflexible
     border: #e7e7e7 solid 1px;
     background: #FFF;
 }
+
+.portbox {
+    overflow: hidden;
+    
+}
+
+.portleft {
+    float: left;
+    border: 1px solid #dedede;
+    width: 264px;
+}
+
+.portright {
+    margin-left: 277px;
+}
+
+.port-title {
+    color: #5284bf;
+    display: block;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.port-title a {
+    color: #5284bf;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+hr.dotted {
+    border: 1px dotted #ccc;
+    border-style: none none dotted; 
+}

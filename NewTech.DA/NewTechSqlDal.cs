@@ -103,6 +103,19 @@ namespace NewTech.DA
             }
         }
 
+        private CustomerRepository customerRepository;
+        public CustomerRepository CustomerRepository
+        {
+            get
+            {
+                if (customerRepository == null)
+                {
+                    customerRepository = new CustomerRepository(this);
+                }
+                return customerRepository;
+            }
+        }
+
         private DictRepository dictRepository;
         public DictRepository DictRepository
         {

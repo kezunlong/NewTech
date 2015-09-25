@@ -11,14 +11,14 @@ namespace NewTech.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
-        public string Industry { get; set; }
+        public int Customer { get; set; }
         public string ThumbImage { get; set; }
         public string Description { get; set; }
         public string Contents { get; set; }
         public bool Status { get; set; }
 
         public Dict CategoryRef { get; set; }
-        public Dict IndustryRef { get; set; }
+        public Customer CustomerRef { get; set; }
         public List<Dict> TechnologyRefs { get; set; }
 
         public Project()
