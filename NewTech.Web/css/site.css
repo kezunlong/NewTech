@@ -11,6 +11,16 @@
     padding-top: 10px;
 }
 
+header {
+    background: #1e4069 url(../images/bg.gif) top repeat-x;
+    height: 119px;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+
+
 .topheader  {
     margin: 10px 0;
 }
@@ -160,4 +170,14 @@ ul.columnflexible
 hr.dotted {
     border: 1px dotted #ccc;
     border-style: none none dotted; 
+}
+
+.inner-header {
+    background: #e8ecf3;
+    border-left: 5px solid #6190c5;
+    font-size: 14px;
+    padding: 6px 5px 6px 10px;
+    font-weight: normal;
+    color: #25548b;
+    margin: 0px 0px 10px 0px;
 }

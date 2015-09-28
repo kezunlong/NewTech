@@ -159,6 +159,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -320,6 +321,10 @@
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Portfolio\PortfolioList.cshtml" />
     <Content Include="less\_navs.less" />
+    <Content Include="Views\Service\OurServices.cshtml" />
+    <Content Include="Views\Shared\_QuickLinks.cshtml" />
+    <Content Include="Views\Service\ApplicationDevelopment.cshtml" />
+    <Content Include="Views\Shared\_Services.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
