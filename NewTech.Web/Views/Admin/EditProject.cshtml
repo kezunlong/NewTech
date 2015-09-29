@@ -22,7 +22,7 @@
                 @Html.DropDownListWithLabelFor(item => item.Project.Category, Model.Categories.ToSelectListItems(x => x.Name, x => x.Id))
             </div>
             <div class="form-group">
-                @Html.DropDownListWithLabelFor(item => item.Project.Industry, Model.Industries.ToSelectListItems(x => x.Name, x => x.Id))
+                @Html.DropDownListWithLabelFor(item => item.Project.Customer, Model.Customers.ToSelectListItems(x => x.Name, x => x.Id.ToString()))
             </div>
             <div class="form-group">
                 @Html.TextBoxWithLabelFor(item => item.Project.ThumbImage)

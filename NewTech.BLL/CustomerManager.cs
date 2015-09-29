@@ -19,10 +19,25 @@ namespace NewTech.BLL
             var item = _dal.CustomerRepository.SelectCustomer(id);
             if (item != null)
             {
-                item.IndustryRef = _bll.DictManager.SelectDict(item.Industry);
+                FillCustomerProperties(item);
             }
             
             return item;
+        }
+
+        public List<Customer> SelectCustomers()
+        {
+            var list = _dal.CustomerRepository.SelectCustomers();
+            foreach(var item in list)
+            {
+                FillCustomerProperties(item);
+            }
+            return list;
+        }
+
+        private void FillCustomerProperties(Customer item)
+        {
+            item.IndustryRef = _bll.DictManager.SelectDict(item.Industry);
         }
     }
 }

@@ -22,6 +22,16 @@ namespace NewTech.BLL
             return list;
         }
 
+        public List<Project> SelectImportantProjects(int length)
+        {
+            var list = _dal.ProjectRepository.SelectImportantProjects(length);
+            foreach (Project item in list)
+            {
+                FillReferenceProperties(item);
+            }
+            return list;
+        }
+
         public Project SelectProject(int id)
         {
             var item = _dal.ProjectRepository.SelectProject(id);

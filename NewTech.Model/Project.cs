@@ -16,10 +16,24 @@ namespace NewTech.Model
         public string Description { get; set; }
         public string Contents { get; set; }
         public bool Status { get; set; }
+        public int Order { get; set; }
 
         public Dict CategoryRef { get; set; }
         public Customer CustomerRef { get; set; }
         public List<Dict> TechnologyRefs { get; set; }
+
+        public string Technologies
+        {
+            get
+            {
+                if(TechnologyRefs != null) {
+                    return string.Join(", ", TechnologyRefs.Select(x => x.Name));
+                }
+                else {
+                    return string.Empty;
+                }
+            }
+        }
 
         public Project()
         {

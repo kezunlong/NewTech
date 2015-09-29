@@ -5,7 +5,7 @@
         <tr>
             <th>Name</th>
             <th>Category</th>
-            <th>Industry</th>
+            <th>Customer</th>
             <th>Description</th>
             <th class="text-center" style="width:100px;">Actions</th>
         </tr>
@@ -16,7 +16,7 @@
             <tr>
                 <td>@Html.ActionLink(item.Name, "EditProject", new { item.Id })</td>
                 <td>@if (item.CategoryRef != null) { @item.CategoryRef.Name }</td>
-                <td>@if (item.IndustryRef != null) { @item.IndustryRef.Name }</td>
+                <td>@if (item.CustomerRef != null) { @item.CustomerRef.Name }</td>
                 <td>@item.Description</td>
                 <td class="text-center">
                     <a href="@Url.Action("DeleteProject", "Admin", new { id = item.Id })" onclick="return confirm('Are you sure to delete this Project?');">

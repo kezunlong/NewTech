@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace NewTech.Web.Controllers
 {
-    public class ServiceController : Controller
+    public class ServiceController : BaseController
     {
         // GET: Service
         public ActionResult OurServices()
@@ -16,6 +16,8 @@ namespace NewTech.Web.Controllers
 
         public ActionResult ApplicationDevelopment()
         {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects(3);
+
             return View();
         }
     }

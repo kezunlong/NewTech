@@ -29,6 +29,22 @@ namespace NewTech.DA
             return list;
         }
 
+        public List<Project> SelectImportantProjects(int length)
+        {
+            List<Project> list = new List<Project>();
+
+            sqlProc.Clear();
+            sqlProc.CommandText = string.Format("SELECT TOP {0} * FROM [dbo].[Projects] ORDER BY [Order] DESC", length);
+            sqlProc.CommandType = CommandType.Text;
+            var table = sqlProc.ExecuteDataTable();
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(DataRowToProject(row));
+            }
+
+            return list;
+        }
+
         public Project SelectProject(int id)
         {
             Project item = null;
@@ -73,7 +89,8 @@ namespace NewTech.DA
                 ThumbImage = Tools.ConvertString(row["ThumbImage"]),
                 Description = Tools.ConvertString(row["Description"]),
                 Contents = Tools.ConvertString(row["Contents"]),
-                Status = Tools.Convert(row["Status"], 0) == 1
+                Status = Tools.Convert(row["Status"], 0) == 1,
+                Order = Tools.Convert(row["Order"], 0)
             };
         }
 
@@ -127,7 +144,8 @@ namespace NewTech.DA
     ,[ThumbImage]
     ,[Description]
     ,[Contents]
-    ,[Status])
+    ,[Status]
+    ,[Order])
 VALUES
     (@Name
     ,@Category
@@ -135,7 +153,8 @@ VALUES
     ,@ThumbImage
     ,@Description
     ,@Contents
-    ,@Status)";
+    ,@Status
+    ,@Order)";
             sqlProc.CommandType = CommandType.Text;
             AddSqlParameters(item);
             sqlProc.ExecuteNonQuery();
@@ -152,6 +171,7 @@ SET [Name] = @Name
     ,[Description] = @Description
     ,[Contents] = @Contents
     ,[Status] = @Status
+    ,[Order] = @Order
 WHERE Id = @Id";
             sqlProc.CommandType = CommandType.Text;
             AddSqlParameters(item);
@@ -177,6 +197,7 @@ WHERE Id = @Id";
             sqlProc.Parameters.AddWithValue("Description", item.Description);
             sqlProc.Parameters.AddWithValue("Contents", item.Contents);
             sqlProc.Parameters.AddWithValue("Status", item.Status ? 1 : 0);
+            sqlProc.Parameters.AddWithValue("Order", item.Order);
         }
     }
 }

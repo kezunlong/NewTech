@@ -90,21 +90,24 @@
         </nav>
     </header>
 
-    @RenderSection("Carousel", false)
+    <div class="body-content">
 
-    <div class="container body-content">
-        @if (TempData["message"] != null)
-        {
-            var alert = TempData["message"] as AlertMessage;
-            <div class="@alert.CategoryCSS alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <strong>@alert.Category.ToString(): </strong> @alert.Message
-            </div>
-        }
+        @RenderSection("Carousel", false)
 
-        @RenderBody()
+        <div class="container" style="margin-top: 15px;">
 
+            @if (TempData["message"] != null)
+            {
+                var alert = TempData["message"] as AlertMessage;
+                <div class="@alert.CategoryCSS alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>@alert.Category.ToString(): </strong> @alert.Message
+                </div>
+            }
 
+            @RenderBody()
+
+        </div>
     </div>
     <footer>
         <div class="container">

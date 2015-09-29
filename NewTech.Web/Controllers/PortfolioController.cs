@@ -70,5 +70,11 @@ namespace NewTech.Web.Controllers
 
             return PartialView(model);
         }
+
+        //public PartialViewResult PortfolioThumb(int id)
+        //{
+        //    Project item = bll.ProjectManager.SelectProject(id);
+        //    return PartialView(item);
+        //}
     }
 }

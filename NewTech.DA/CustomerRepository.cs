@@ -32,6 +32,22 @@ namespace NewTech.DA
             return item;
         }
 
+        public List<Customer> SelectCustomers()
+        {
+            List<Customer> list = new List<Customer>();
+
+            sqlProc.Clear();
+            sqlProc.CommandText = "SELECT * FROM [dbo].[Customer]";
+            sqlProc.CommandType = CommandType.Text;
+            var table = sqlProc.ExecuteDataTable();
+            foreach(DataRow row in table.Rows)
+            {
+                list.Add(DataRowToCustomer(row));
+            }
+
+            return list;
+        }
+
         public List<Customer> SelectServicedCustomers()
         {
             List<Customer> list = new List<Customer>();

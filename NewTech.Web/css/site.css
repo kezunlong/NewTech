@@ -6,13 +6,11 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
+    padding: 119px 0 0 0;
 }
 
 header {
-    background: #1e4069 url(../images/bg.gif) top repeat-x;
+    background: #1e4069 top repeat-x;   /*url(../images/bg.gif) */
     height: 119px;
     color: #fff;
     position: fixed;
@@ -22,7 +20,7 @@ header {
 
 
 .topheader  {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 footer {
@@ -44,6 +42,33 @@ footer {
     line-height: 17px;
     margin: 0;
     padding: 15px 0 0;
+}
+
+.thumbnail .caption {
+    background: url(../img/storytop.png) top repeat-x;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail h3 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.thumbnail hr {
+    margin: 5px 0;
+}
+
+h3.subtitle {
+    font-size: 20px;
+    line-height: 1;
+    color: #e28f14;
+    text-transform: uppercase;
+    padding: 0 0 8px 0;
+    margin: 0;
+    font-weight: normal;
 }
 
 
@@ -92,6 +117,50 @@ ul.unordered li {
     margin: 7px 0px 7px 0px;
     background: url(../img/sublink_bul.gif) no-repeat 0px 6px;
     line-height: 16px;
+}
+
+ul.listing {
+    padding: 0 0 6px 5px;
+    margin: 0;
+    list-style: none;
+}
+
+ul.listing li {
+    padding: 0 0 0 14px;
+    margin: 0 0 8px 0;
+    list-style-type: none;
+    background: url(../img/bullet.png) 0px 5px no-repeat;
+}
+
+ul.tech-list {
+    overflow: hidden;
+    padding: 0 0 15px 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.tech-list li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 180px;
+    *width:173px: ;
+    height: 70px;
+    text-align: center;
+    border: 1px solid #e7e7e7;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.techhead {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1;
+    padding: 8px;
+    margin: 0;
+    background: #f0f0f0;
+    width: 720px;
 }
 
 ul.columnflexible 
@@ -180,4 +249,52 @@ hr.dotted {
     font-weight: normal;
     color: #25548b;
     margin: 0px 0px 10px 0px;
+}
+
+.newtech-advantage {
+    position: relative;
+    background: #264d7c url(../img/big_tick.png) right center no-repeat;
+    padding: 25px;
+    color: #fff;
+    margin: 15px 0px;
+}
+
+.newtech-advantage h3 {
+    font-size: 32px;
+    font-weight: normal;
+    color: #fff;
+    line-height: 1;
+    padding: 0 0 15px 0;
+    margin: 0;
+}
+
+.newtech-advantage ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.newtech-advantage ul li {
+    list-style-type: none;
+    padding: 0 0 0 30px;
+    margin: 0 0 10px 0;
+    background: url(../img/bullet5.png) 3px 0px no-repeat;
+    font-size: 14px;
+}
+
+.inr_contact {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    text-align: right;
+}
+
+a.contact_link {
+    color: #fff;
+    padding: 6px 0 0 0;
+    font-size: 18px;
+    text-decoration: none;
+    height: 36px;
+    display: inline-block;
+    cursor: pointer;
 }

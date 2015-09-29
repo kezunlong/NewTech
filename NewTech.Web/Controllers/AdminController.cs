@@ -137,7 +137,7 @@ namespace NewTech.Web.Controllers
         private void FillAdditionalProperties(ProjectViewModel model)
         {
             model.Categories = bll.DictManager.SelectDicts("Category");
-            model.Industries = bll.DictManager.SelectDicts("Industry");
+            model.Customers = bll.CustomerManager.SelectCustomers();
         }
 
         #endregion

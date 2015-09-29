@@ -1,53 +1,110 @@
-﻿@{
+﻿@using NewTech.Model;
+@{
     ViewBag.Title = "ApplicationDevelopment";
 }
 
-<h3>我们的服务</h3>
-<nav class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-        <li><a href="#a">a</a></li>
-        <li><a href="#b">b</a></li>
-        <li><a href="#c">c</a></li>
-        <li><a href="#d">d</a></li>
-        <li><a href="#e">e</a></li>
-    </ul>
-</nav>
-
 <div>
     <div class="col-md-9">
-        <div id="a">
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
+        <h3>我们的服务</h3>
+        <hr />
+        <h3 class="subtitle">简介</h3>
+        <p>
+            Every business wishes to stay ahead or at least at par with its competitors and this is possible only if the businesses have crisp strategies. Customized applications will help you streamline and expedite your operations thus making the processes glib. By engaging TatvaSoft for developing your applications you will be benefitted in terms of cost and quality of resources and development.
+        </p>
+        <p>
+            <b>Application Development at TatvaSoft</b>
+        </p>
+        <p>
+            TatvaSoft creates tailor made solutions for its clients. We elucidate the clients view and draft a blue print accordingly for the project development. At every stage of SDLC i.e requirement gathering, strategizing, creating model, implementation and deployment, we maintain constant communication with the client so that nothing goes unnoticed and if any risks are identified they can be dealt immediately. We have an abled team of talented professionals who are experienced in developing robust and efficient systems.
+        </p>
+        <h3 class="subtitle">服务内容</h3>
+        <ul class="listing">
+            <li>Application migration & re-engineering</li>
+            <li>Bespoke application development</li>
+            <li>Product development</li>
+            <li>Application maintenance</li>
+            <li>Enterprise application integration</li>
+            <li>Client - Server application development</li>
+            <li>On-premise and Cloud application development</li>
+            <li>Mobile application development</li>
+        </ul>
+        <p>
+            The above mentioned are some of the services offered by TatvaSoft. We begin with planning and end on deployment of the solutions and in some cases also provide maintenance services.
+        </p>
+        <h3 class="subtitle">专业技能</h3>
+        <p>
+            We use following tools and technologies to provide application development services:
+        </p>
+        <h3 class="techhead">Microsoft Technologies</h3>
+        <ul class="tech-list">
+            <li><img src="~/img/microsoft-asp.net.jpg" /></li>
+            <li><img src="~/img/microsoft-asp.net-mvc.jpg" /></li>
+            <li><img src="~/img/microsoft-wpf.jpg" /></li>
+            <li><img src="~/img/microsoft-wcf.jpg" /></li>
+            <li><img src="~/img/microsoft-mvvm.jpg" /></li>
+            <li><img src="~/img/microsoft-sharepoint.jpg" /></li>
+            <li><img src="~/img/microsoft-biztalk.jpg" /></li>
+            <li><img src="~/img/microsoft-crm.jpg" /></li>
+            <li><img src="~/img/microsoft-sqlserver.jpg" /></li>
+            <li><img src="~/img/microsoft-ssrs.jpg" /></li>
+            <li><img src="~/img/microsoft-crystal-reports.jpg" /></li>
+        </ul>
+        <h3 class="subtitle">项目经验</h3>
+        <ul class="listing">
+            <li>Business Intelligence applications</li>
+            <li>Competitive Intelligence tools</li>
+            <li>ERP Solutions</li>
+            <li>E-business Solutions</li>
+            <li>E-commerce applications</li>
+            <li>E-learning solutions</li>
+            <li>Financial management systems</li>
+            <li>GPS tracking systems</li>
+            <li>Human resource management systems</li>
+            <li>Integration of SAGE ERP, Salesforce as well as other legacy systems</li>
+            <li>Internet, Intranet and extranet portals for corporate companies</li>
+            <li>Job portal and recruitment solutions</li>
+            <li>Point of sale systems</li>
+            <li>Real time analysis and reporting systems for natural resources and mining industries</li>
+            <li>SaaS development</li>
+            <li>Security surveillance applications</li>
+            <li>Social networking websites</li>
+        </ul>
+        <h3 class="subtitle">产品展示</h3>
+        <div class="row">
+            @foreach (Project item in (IEnumerable<Project>)ViewBag.ImportantProjects)
+            {
+                <div class="col-sm-6 col-md-4">
+                    @Html.Partial("PortfolioThumb", item)
+                </div>
+            }
         </div>
-        <div id="b">
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
+        <div class="row text-right">
+            @Html.ActionLink("查看所有产品 >>", "Index", "Portfolio")
         </div>
-        <div id="c">
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-        </div>
-        <div id="d">
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
-            <p>test</p>
+        <h3>Getting started: Discussing your Project requirements</h3>
+        <p>
+            To hire the services of TatvaSoft all you need to do is either send us an email, call or send an enquiry and our team will contact you to further discuss your requirements in detail. Once the project gets finalized it is handled by a team of professionals working on it right through the entire SDLC.
+        </p>
+        <div class="newtech-advantage">
+            <h3>我们公司的优势</h3>
+            <ul>
+                <li>客户至上的服务理念</li>
+                <li>超过10年工作经验的开发人员</li>
+                <li>紧跟信息发展潮流</li>
+                <li>追求卓越，永不止步</li>
+                <li>多样化的专业技能和业务知识</li>
+                <li>知识产权的良好保护</li>
+                <li>与客户建立长期稳定的合作关系</li>
+            </ul>
+            <div class="inr_contact">
+                <a class="contact_link" href='@Url.Action("Index", "ContactUS")'>
+                    <span class="icon fa fa-twitter"></span> 联系我们
+                </a>
+            </div>
         </div>
     </div>
     <div class="col-md-3">
+        @Html.Partial("_Services")
+        @Html.Partial("_QuickLinks")
     </div>
 </div>
