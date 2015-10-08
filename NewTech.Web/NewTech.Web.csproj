@@ -353,6 +353,10 @@
     <Content Include="Views\Service\ApplicationDevelopment.cshtml" />
     <Content Include="Views\Shared\_Services.cshtml" />
     <Content Include="Views\Service\PortfolioThumb.cshtml" />
+    <Content Include="Views\Service\WebDevelopment.cshtml" />
+    <Content Include="Views\Shared\_GettingStart.cshtml" />
+    <Content Include="Views\Service\SoftwareMigration.cshtml" />
+    <Content Include="Views\Service\ApplicationMaintenance.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

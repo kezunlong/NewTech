@@ -1,0 +1,81 @@
+﻿@using NewTech.Model;
+@{
+    ViewBag.Title = "Web Development";
+}
+
+<div>
+    <div class="col-md-9">
+        <h3>Web应用程序开发</h3>
+        <hr />
+        <h3 class="subtitle">简介</h3>
+        <p>
+            早期的业务应用一般通过桌面应用程序来实现，但技术随着时间在飞速发展。互联网在当今的商业世界里占据了非常重要的战略地位，企业亟需建立自己有效的web解决方案以提升竞争力、留住客户资源。
+        </p>
+        <p>
+            Web解决方案涵盖了一系列通用服务内容和定制web应用开发。任何机构，无论大小，都需要获得更好的可扩展性、移动性和服务可用性，定制的web应用开发正在成为满足企业这些需求的不二选择。而更多的企业已经开始选择用web应用和系统来代替桌面应用。
+        </p>
+        <p>
+            <b>“新科软件”的Web开发</b>
+        </p>
+        <p>
+            新科软件为全球客户提供多种web解决方案和服务内容，最大限度的支持客户的全球服务战略。我们的web解决方案在架构设计、应用开发、web应用互动性设计方面具备强大的实力。对客户来说，不管企业规模大小，我们都有相应的高性价比解决方案。我们针对不同的客户的需求，为其设计专属的web应用和解决方案，以最优的方式满足客户的独特需求。
+        </p>
+        <h3 class="subtitle">服务内容</h3>
+        <ul class="listing">
+            <li>动态Web站点开发</li>
+            <li>Web 应用的架构设计与开发</li>
+            <li>Web 应用的质量保证和测试服务</li>
+            <li>Web 应用集成</li>
+            <li>基于web的企业应用：CRM、CMS、ERP等</li>
+            <li>电子商务：旅游、在线购物应用系统等</li>
+            <li>搜索：搜索引擎优化、搜索结果、内容编辑等</li>
+            <li>在线社交网络应用开发</li>
+            <li>门户网站开发</li>
+            <li>在线学习网站</li>
+        </ul>
+        <h3 class="subtitle">专业技能</h3>
+        <ul class="tech-list">
+            <li><img src="~/img/microsoft-asp.net.jpg" /></li>
+            <li><img src="~/img/microsoft-asp.net-mvc.jpg" /></li>
+            <li><img src="~/img/microsoft-sharepoint.jpg" /></li>
+            <li><img src="~/img/opensource-php.jpg" /></li>
+            <li><img src="~/img/oracle-apex.jpg" /></li>
+            <li><img src="~/img/oracle-java.jpg" /></li>
+        </ul>
+        <h3 class="subtitle">项目经验</h3>
+        <ul class="listing">
+            <li>企业管理软件</li>
+            <li>ERP 解决方案</li>
+            <li>人力资源管理系统</li>
+            <li>工作流解决方案</li>
+            <li>财务管理系统</li>
+            <li>商务智能应用</li>
+            <li>电子商务解决方案/应用程序</li>
+            <li>电子学习-在线课程系统</li>
+            <li>物流、快递系统</li>
+            <li>企业因特网门户网站、局域网应用程序</li>
+            <li>就业门户及招聘解决方案</li>
+            <li>行业实时分析与报表系统</li>
+            <li>SaaS 开发</li>
+            <li>安全监控应用程序</li>
+            <li>社交网站</li>
+        </ul>
+        <h3 class="subtitle">产品展示</h3>
+        <div class="row">
+            @foreach (Project item in (IEnumerable<Project>)ViewBag.ImportantProjects)
+            {
+                <div class="col-sm-6 col-md-4">
+                    @Html.Partial("PortfolioThumb", item)
+                </div>
+            }
+        </div>
+        <div class="row text-right">
+            @Html.ActionLink("查看所有产品 >>", "Index", "Portfolio")
+        </div>
+        @Html.Partial("_GettingStart")
+    </div>
+    <div class="col-md-3">
+        @Html.Partial("_Services")
+        @Html.Partial("_QuickLinks")
+    </div>
+</div>

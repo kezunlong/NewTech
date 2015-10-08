@@ -16,7 +16,26 @@ namespace NewTech.Web.Controllers
 
         public ActionResult ApplicationDevelopment()
         {
-            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects(3);
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1001", 3);
+
+            return View();
+        }
+
+        public ActionResult WebDevelopment()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1002", 3);
+
+            return View();
+        }
+
+        public ActionResult SoftwareMigration()
+        {
+            return View();
+        }
+
+        public ActionResult ApplicationMaintenance()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1002", 3);
 
             return View();
         }

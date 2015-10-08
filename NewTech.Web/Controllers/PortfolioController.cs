@@ -60,7 +60,6 @@ namespace NewTech.Web.Controllers
         public ActionResult ProjectsList(ProjectFilter filter, int page = 1)
         {
             PagingOption option = GetPagingOption(page);
-            option.Length = 5;
 
             var model = new ProjectsViewModel
             {

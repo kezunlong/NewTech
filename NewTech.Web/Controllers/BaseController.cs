@@ -50,7 +50,7 @@ namespace NewTech.Web.Controllers
 
         #endregion
 
-        protected int PageSize = 15;
+        protected int PageSize = 5;
 
         protected PagingOption GetPagingOption(int page)
         {
