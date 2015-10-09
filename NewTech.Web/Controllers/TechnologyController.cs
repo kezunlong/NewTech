@@ -11,7 +11,28 @@ namespace NewTech.Web.Controllers
         // GET: Technology
         public ActionResult MicrosoftDotNet()
         {
-            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1001", 3);
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByTechnology("1011", 3);
+
+            return View();
+        }
+
+        public ActionResult SharepointDevelopment()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByTechnology("1012", 3);
+
+            return View();
+        }
+
+        public ActionResult JavaDevelopment()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByTechnology("1013", 3);
+
+            return View();
+        }
+
+        public ActionResult OracleDevelopment()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByTechnology("1014", 3);
 
             return View();
         }

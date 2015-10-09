@@ -63,36 +63,8 @@
             <li><img src="~/img/mobile-ios.jpg" /></li>
             <li><img src="~/img/mobile-android.jpg" /></li>
         </ul>
-        <h3 class="subtitle">项目经验</h3>
-        <ul class="listing">
-            <li>企业管理软件</li>
-            <li>ERP 解决方案</li>
-            <li>人力资源管理系统</li>
-            <li>工作流解决方案</li>
-            <li>财务管理系统</li>
-            <li>商务智能应用</li>
-            <li>电子商务解决方案/应用程序</li>
-            <li>电子学习-在线课程系统</li>
-            <li>物流、快递系统</li>
-            <li>企业因特网门户网站、局域网应用程序</li>
-            <li>就业门户及招聘解决方案</li>
-            <li>行业实时分析与报表系统</li>
-            <li>SaaS 开发</li>
-            <li>安全监控应用程序</li>
-            <li>社交网站</li>
-        </ul>
-        <h3 class="subtitle">产品展示</h3>
-        <div class="row">
-            @foreach (Project item in (IEnumerable<Project>)ViewBag.ImportantProjects)
-            {
-                <div class="col-sm-6 col-md-4">
-                    @Html.Partial("_PortfolioThumb", item)
-                </div>
-            }
-        </div>
-        <div class="row text-right">
-            @Html.ActionLink("查看所有产品 >>", "Index", "Portfolio")
-        </div>
+        @Html.Partial("_Experience")
+        @Html.Partial("_PortfolioThumbs", (object)ViewBag.ImportantProjects)
         @Html.Partial("_GettingStart")
     </div>
     <div class="col-md-3">

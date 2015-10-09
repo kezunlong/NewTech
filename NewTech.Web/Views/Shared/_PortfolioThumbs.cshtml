@@ -1,0 +1,32 @@
+﻿@model IEnumerable<NewTech.Model.Project>
+
+<h3 class="subtitle">产品展示</h3>
+<div class="row">
+    @foreach (NewTech.Model.Project item in Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                @if (string.IsNullOrEmpty(item.ThumbImage))
+                {
+                    <img src="~/img/portfolio-1.jpg">
+                }
+                else
+                {
+                    <img src="@Url.Content(item.ThumbImage)">
+                }
+                
+                <div class="caption">
+                    <h3>@Html.ActionLink(item.Name, "Item", "Portfolio", new { Id = item.Id }, null)</h3>
+                    <hr />
+                    @item.Technologies
+                    <hr />
+                    <p>@item.Description</p>
+                    <p>@Html.ActionLink("了解详情 >>", "Item", "Portfolio", new { Id = item.Id }, null)</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="row text-right">
+    @Html.ActionLink("查看所有产品 >>", "Index", "Portfolio")
+</div>

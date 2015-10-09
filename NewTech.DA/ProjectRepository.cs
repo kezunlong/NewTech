@@ -29,22 +29,22 @@ namespace NewTech.DA
             return list;
         }
 
-        public List<Project> SelectImportantProjects(string category, int length)
-        {
-            List<Project> list = new List<Project>();
+        //public List<Project> SelectImportantProjects(string category, int length)
+        //{
+        //    List<Project> list = new List<Project>();
 
-            sqlProc.Clear();
-            sqlProc.CommandText = string.Format("SELECT TOP {0} * FROM [dbo].[Projects] WHERE Category = @Category ORDER BY [Order] DESC", length);
-            sqlProc.CommandType = CommandType.Text;
-            sqlProc.Parameters.AddWithValue("Category", category);
-            var table = sqlProc.ExecuteDataTable();
-            foreach (DataRow row in table.Rows)
-            {
-                list.Add(DataRowToProject(row));
-            }
+        //    sqlProc.Clear();
+        //    sqlProc.CommandText = string.Format("SELECT TOP {0} * FROM [dbo].[Projects] WHERE Category = @Category ORDER BY [Order] DESC", length);
+        //    sqlProc.CommandType = CommandType.Text;
+        //    sqlProc.Parameters.AddWithValue("Category", category);
+        //    var table = sqlProc.ExecuteDataTable();
+        //    foreach (DataRow row in table.Rows)
+        //    {
+        //        list.Add(DataRowToProject(row));
+        //    }
 
-            return list;
-        }
+        //    return list;
+        //}
 
         public Project SelectProject(int id)
         {

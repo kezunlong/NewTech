@@ -1,0 +1,56 @@
+﻿@using NewTech.Model;
+@{
+    ViewBag.Title = "Java Development";
+}
+
+
+<div>
+    <div class="col-md-9">
+        <h3>Java/J2EE开发</h3>
+        <hr />
+        <h3 class="subtitle">简介</h3>
+        <p>
+            Java是一种可以撰写跨平台应用程序的面向对象的程序设计语言。
+            Java 技术具有卓越的通用性、高效性、平台移植性和安全性，广泛应用于PC、数据中心、游戏控制台、科学超级计算机、移动电话和互联网，同时拥有全球最大的开发者专业社群。
+        </p>
+        <p>
+            与传统程序不同，Sun 公司在推出 Java 之际就将其作为一种开放的技术。全球数以万计的 Java 开发公司被要求所设计的 Java软件必须相互兼容。“Java 语言靠群体的力量而非公司的力量”是Sun公司的口号之一，并获得了广大软件开发商的认同。
+        </p>
+        <p>
+            新科软件精通于如下多种Java技术，包括：J2SE、J2EE、J2ME、JavaFX，以及相关的数据库技术： Oracle、MySQL。多年的Java开发与行业经验是我们能够准确地将客户的业务需求转化成健壮、友好、高效的Java解决方案。
+        </p>
+        <h3 class="subtitle">服务内容</h3>
+        <ul class="listing">
+            <li>软件定制开发</li>
+            <li>基于J2EE技术的Web应用开发</li>
+            <li>企业应用集成</li>
+            <li>Java applet开发</li>
+            <li>软件维护与支持</li>
+            <li>将现有IT系统迁移至Java环境</li>
+            <li>系统重构与升级</li>
+        </ul>
+        <h3 class="subtitle">专业技能</h3>
+        <p>
+            我们的开发人员通过如下Java技术来为客户提供软件开发和运维服务：
+        </p>
+        <ul class="tech-list">
+            <li><img src="~/img/java.jpg" /></li>
+            <li><img src="~/img/java-ee.jpg" /></li>
+            <li><img src="~/img/java-jsp.jpg" /></li>
+            <li><img src="~/img/java-servlet.jpg" /></li>
+            <li><img src="~/img/java-swing.jpg" /></li>
+            <li><img src="~/img/java-spring.jpg" /></li>
+            <li><img src="~/img/java-hibernate.jpg" /></li>
+            <li><img src="~/img/java-structs.jpg" /></li>
+            <li><img src="~/img/oracle-database.jpg" /></li>
+            <li><img src="~/img/oracle-apex.jpg" /></li>
+        </ul>
+        @Html.Partial("_Experience")
+        @Html.Partial("_PortfolioThumbs", (object)ViewBag.ImportantProjects)
+        @Html.Partial("_GettingStart")
+    </div>
+    <div class="col-md-3">
+        @Html.Partial("_Technologies")
+        @Html.Partial("_QuickLinks")
+    </div>
+</div>

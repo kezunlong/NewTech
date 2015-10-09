@@ -16,14 +16,14 @@ namespace NewTech.Web.Controllers
 
         public ActionResult ApplicationDevelopment()
         {
-            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1001", 3);
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByCategory("1001", 3);
 
             return View();
         }
 
         public ActionResult WebDevelopment()
         {
-            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1002", 3);
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByCategory("1002", 3);
 
             return View();
         }
@@ -35,7 +35,7 @@ namespace NewTech.Web.Controllers
 
         public ActionResult ApplicationMaintenance()
         {
-            ViewBag.ImportantProjects = bll.ProjectManager.SelectImportantProjects("1002", 3);
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByCategory("1002", 3);
 
             return View();
         }

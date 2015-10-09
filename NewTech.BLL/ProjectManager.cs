@@ -22,9 +22,23 @@ namespace NewTech.BLL
             return list;
         }
 
-        public List<Project> SelectImportantProjects(string category, int length)
+        public List<Project> SelectProjectsByCategory(string category, int length)
         {
-            var list = _dal.ProjectRepository.SelectImportantProjects(category, length);
+            ProjectFilter filter = new ProjectFilter { Category = category };
+            var list = _dal.ProjectRepository.SelectProjects(filter, null);
+            list = list.OrderByDescending(item => item.Order).Take(length).ToList();
+            foreach (Project item in list)
+            {
+                FillReferenceProperties(item);
+            }
+            return list;
+        }
+
+        public List<Project> SelectProjectsByTechnology(string technology, int length)
+        {
+            ProjectFilter filter = new ProjectFilter { Technology = technology };
+            var list = _dal.ProjectRepository.SelectProjects(filter, null);
+            list = list.OrderByDescending(item => item.Order).Take(length).ToList();
             foreach (Project item in list)
             {
                 FillReferenceProperties(item);

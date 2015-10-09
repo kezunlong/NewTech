@@ -95,6 +95,12 @@
     <Content Include="img\down-ar.gif" />
     <Content Include="img\header_bg.gif" />
     <Content Include="img\industry.jpg" />
+    <Content Include="img\java-hibernate.jpg" />
+    <Content Include="img\java-jsp.jpg" />
+    <Content Include="img\java-servlet.jpg" />
+    <Content Include="img\java-spring.jpg" />
+    <Content Include="img\java-structs.jpg" />
+    <Content Include="img\java-swing.jpg" />
     <Content Include="img\microsoft-asp.net-mvc.jpg" />
     <Content Include="img\microsoft-asp.net.jpg" />
     <Content Include="img\microsoft-biztalk.jpg" />
@@ -115,8 +121,8 @@
     <Content Include="img\opensource-php.jpg" />
     <Content Include="img\oracle-apex.jpg" />
     <Content Include="img\oracle-database.jpg" />
-    <Content Include="img\oracle-java-ee.jpg" />
-    <Content Include="img\oracle-java.jpg" />
+    <Content Include="img\java-ee.jpg" />
+    <Content Include="img\java.jpg" />
     <Content Include="img\portfolio-1.jpg" />
     <Content Include="img\portfolio-cdc.jpg" />
     <Content Include="img\portfolio-china-scm.jpg" />
@@ -360,6 +366,10 @@
     <Content Include="Views\Service\ApplicationMaintenance.cshtml" />
     <Content Include="Views\Technology\_Technologies.cshtml" />
     <Content Include="Views\Technology\MicrosoftDotNet.cshtml" />
+    <Content Include="Views\Technology\JavaDevelopment.cshtml" />
+    <Content Include="Views\Technology\OracleDevelopment.cshtml" />
+    <Content Include="Views\Shared\_Experience.cshtml" />
+    <Content Include="Views\Shared\_PortfolioThumbs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
