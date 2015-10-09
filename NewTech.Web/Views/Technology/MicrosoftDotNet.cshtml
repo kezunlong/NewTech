@@ -1,38 +1,48 @@
 ﻿@using NewTech.Model;
 @{
-    ViewBag.Title = "ApplicationDevelopment";
+    ViewBag.Title = "Microsoft .NET";
 }
+
 
 <div>
     <div class="col-md-9">
-        <h3>应用程序维护</h3>
+        <h3>Microsoft .NET开发</h3>
         <hr />
         <h3 class="subtitle">简介</h3>
         <p>
-            软件开发与交互并不是软件生命周期的终点，相反，它标志着另一个重要阶段的开始：产品维护。我们所处的世界，技术发展日新月异。所以我们需要对已经建立的软件系统进行维护与改进，以保证它的生命力可以适应技术的革新。
+            Microsoft .NET Framework是用于Windows的新托管代码编程模型。它将强大的功能与新技术结合起来，用于构建具有视觉上引人注目的用户体验的应用程序，实现跨技术边界的无缝通信，并且能支持各种业务流程。
         </p>
         <p>
-            <b>“新科软件”的程序维护</b>
+            .NET Framework 旨在实现下列目标：
+            <ul class="listing">
+                <li>提供一个一致的面向对象的编程环境，而无论对象代码是在本地存储和执行，还是在本地执行但在 Internet 上分布，或者是在远程执行的。 </li>
+                <li>提供一个将软件部署和版本控制冲突最小化的代码执行环境。 </li>
+                <li>提供一个可提高代码（包括由未知的或不完全受信任的第三方创建的代码）执行安全性的代码执行环境。 </li>
+                <li>提供一个可消除脚本环境或解释环境的性能问题的代码执行环境。 </li>
+                <li>使开发人员的经验在面对类型大不相同的应用程序（如基于 Windows 的应用程序和基于 Web 的应用程序）时保持一致。 </li>
+                <li>按照工业标准生成所有通信，以确保基于 .NET Framework 的代码可与任何其他代码集成。</li>
+            </ul>
         </p>
         <p>
-            在新科软件，我们有一个经验丰富的开发/维护团队。我们很好地了解软件开发的复杂性以及业务的变化与多样性。多年的开发与运维经验使我们的产品不仅仅是一个定制的业务解决方案，同时还具备良好的扩展性和可靠性。这样，软件系统的后期维护将会更加轻松。
+            自从微软公司于2002年推出.NET 1.0起，新科软件就开始了.NET技术的开发与应用。至今，Microsoft .NET技术是我们公司使用最广泛、最深入的技术之一。
+            我们已经使用.NET开发了超过600个应用程序，涵盖：ASP.net, ASP.net MVC, .NET WPF, .NET WCF, .NET MVVM, SharePoint, BizTalk以及第三方控件库。
         </p>
         <h3 class="subtitle">服务内容</h3>
         <ul class="listing">
-            <li>应用程序功能添加与改进</li>
-            <li>配置管理</li>
-            <li>故障诊断与修复</li>
-            <li>性能调优</li>
-            <li>系统重构/重写，测试与部署</li>
+            <li>软件升级与重构</li>
+            <li>软件定制开发</li>
+            <li>软件维护</li>
+            <li>动态Web站点开发</li>
+            <li>Web 应用的架构设计与开发</li>
+            <li>Web 应用的质量保证和测试服务</li>
+            <li>Web 应用集成</li>
+            <li>基于web的企业应用：CRM、CMS、ERP等</li>
+            <li>电子商务：旅游、在线购物应用系统等</li>
         </ul>
-        <p>
-            我们的运维服务将会显著减轻客户对于系统优化带来的压力，并保证各项运维操作的合理与安全性，使软件系统能更高效地为企业提供服务。
-        </p>
         <h3 class="subtitle">专业技能</h3>
         <p>
-            我们对使用如下技术开发的软件系统提供维护服务：
+            我们的开发人员通过如下Microsoft .NET技术来为客户提供软件开发和运维服务：
         </p>
-        <h3 class="techhead">微软技术(Microsoft Technologies)</h3>
         <ul class="tech-list">
             <li><img src="~/img/microsoft-asp.net.jpg" /></li>
             <li><img src="~/img/microsoft-asp.net-mvc.jpg" /></li>
@@ -45,23 +55,6 @@
             <li><img src="~/img/microsoft-sqlserver.jpg" /></li>
             <li><img src="~/img/microsoft-ssrs.jpg" /></li>
             <li><img src="~/img/microsoft-crystal-reports.jpg" /></li>
-        </ul>
-        <h3 class="techhead">开源技术(Open Source Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/opensource-mysql.jpg" /></li>
-            <li><img src="~/img/opensource-php.jpg" /></li>
-        </ul>
-        <h3 class="techhead">Oracle技术(Oracle Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/oracle-database.jpg" /></li>
-            <li><img src="~/img/oracle-apex.jpg" /></li>
-            <li><img src="~/img/oracle-java.jpg" /></li>
-            <li><img src="~/img/oracle-java-ee.jpg" /></li>
-        </ul>
-        <h3 class="techhead">移动技术(Mobile Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/mobile-ios.jpg" /></li>
-            <li><img src="~/img/mobile-android.jpg" /></li>
         </ul>
         <h3 class="subtitle">项目经验</h3>
         <ul class="listing">
@@ -96,7 +89,7 @@
         @Html.Partial("_GettingStart")
     </div>
     <div class="col-md-3">
-        @Html.Partial("_Services")
+        @Html.Partial("_Technologies")
         @Html.Partial("_QuickLinks")
     </div>
 </div>

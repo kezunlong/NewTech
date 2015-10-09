@@ -88,7 +88,7 @@
             @foreach (Project item in (IEnumerable<Project>)ViewBag.ImportantProjects)
             {
                 <div class="col-sm-6 col-md-4">
-                    @Html.Partial("PortfolioThumb", item)
+                    @Html.Partial("_PortfolioThumb", item)
                 </div>
             }
         </div>

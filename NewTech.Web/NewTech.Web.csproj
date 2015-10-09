@@ -187,6 +187,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\TechnologyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -351,12 +352,14 @@
     <Content Include="Views\Service\OurServices.cshtml" />
     <Content Include="Views\Shared\_QuickLinks.cshtml" />
     <Content Include="Views\Service\ApplicationDevelopment.cshtml" />
-    <Content Include="Views\Shared\_Services.cshtml" />
-    <Content Include="Views\Service\PortfolioThumb.cshtml" />
+    <Content Include="Views\Service\_Services.cshtml" />
+    <Content Include="Views\Shared\_PortfolioThumb.cshtml" />
     <Content Include="Views\Service\WebDevelopment.cshtml" />
     <Content Include="Views\Shared\_GettingStart.cshtml" />
     <Content Include="Views\Service\SoftwareMigration.cshtml" />
     <Content Include="Views\Service\ApplicationMaintenance.cshtml" />
+    <Content Include="Views\Technology\_Technologies.cshtml" />
+    <Content Include="Views\Technology\MicrosoftDotNet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
