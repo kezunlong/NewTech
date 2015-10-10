@@ -43,25 +43,14 @@
         <p>
             我们的开发人员通过如下Microsoft .NET技术来为客户提供软件开发和运维服务：
         </p>
-        <ul class="tech-list">
-            <li><img src="~/img/microsoft-asp.net.jpg" /></li>
-            <li><img src="~/img/microsoft-asp.net-mvc.jpg" /></li>
-            <li><img src="~/img/microsoft-wpf.jpg" /></li>
-            <li><img src="~/img/microsoft-wcf.jpg" /></li>
-            <li><img src="~/img/microsoft-mvvm.jpg" /></li>
-            <li><img src="~/img/microsoft-sharepoint.jpg" /></li>
-            <li><img src="~/img/microsoft-biztalk.jpg" /></li>
-            <li><img src="~/img/microsoft-crm.jpg" /></li>
-            <li><img src="~/img/microsoft-sqlserver.jpg" /></li>
-            <li><img src="~/img/microsoft-ssrs.jpg" /></li>
-            <li><img src="~/img/microsoft-crystal-reports.jpg" /></li>
-        </ul>
-        @Html.Partial("_Experience")
-        @Html.Partial("_PortfolioThumbs", (object)ViewBag.ImportantProjects)
-        @Html.Partial("_GettingStart")
+        @Html.Partial("TechListMicrosoft")
+
+        @Html.Partial("Experience")
+        @Html.Partial("PortfolioThumbs", (object)ViewBag.ImportantProjects)
+        @Html.Partial("GettingStart")
     </div>
     <div class="col-md-3">
         @Html.Partial("_Technologies")
-        @Html.Partial("_QuickLinks")
+        @Html.Partial("QuickLinks")
     </div>
 </div>

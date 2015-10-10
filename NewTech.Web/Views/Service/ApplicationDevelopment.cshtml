@@ -35,51 +35,24 @@
             我们的开发人员通过如下工具和技术来为客户提供软件开发服务：
         </p>
         <h3 class="techhead">微软技术(Microsoft Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/microsoft-asp.net.jpg" /></li>
-            <li><img src="~/img/microsoft-asp.net-mvc.jpg" /></li>
-            <li><img src="~/img/microsoft-wpf.jpg" /></li>
-            <li><img src="~/img/microsoft-wcf.jpg" /></li>
-            <li><img src="~/img/microsoft-mvvm.jpg" /></li>
-            <li><img src="~/img/microsoft-sharepoint.jpg" /></li>
-            <li><img src="~/img/microsoft-biztalk.jpg" /></li>
-            <li><img src="~/img/microsoft-crm.jpg" /></li>
-            <li><img src="~/img/microsoft-sqlserver.jpg" /></li>
-            <li><img src="~/img/microsoft-ssrs.jpg" /></li>
-            <li><img src="~/img/microsoft-crystal-reports.jpg" /></li>
-        </ul>
+        @Html.Partial("TechListMicrosoft")
         <h3 class="techhead">开源技术(Open Source Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/opensource-mysql.jpg" /></li>
-            <li><img src="~/img/opensource-php.jpg" /></li>
-        </ul>
-        <h3 class="techhead">Java技术(Java Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/java.jpg" /></li>
-            <li><img src="~/img/java-ee.jpg" /></li>
-            <li><img src="~/img/java-jsp.jpg" /></li>
-            <li><img src="~/img/java-servlet.jpg" /></li>
-            <li><img src="~/img/java-swing.jpg" /></li>
-            <li><img src="~/img/java-spring.jpg" /></li>
-            <li><img src="~/img/java-hibernate.jpg" /></li>
-            <li><img src="~/img/java-structs.jpg" /></li>
-        </ul>
-        <h3 class="techhead">Oracle技术(Oracle Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/oracle-database.jpg" /></li>
-            <li><img src="~/img/oracle-apex.jpg" /></li>
-        </ul>
-        <h3 class="techhead">移动技术(Mobile Technologies)</h3>
-        <ul class="tech-list">
-            <li><img src="~/img/mobile-ios.jpg" /></li>
-            <li><img src="~/img/mobile-android.jpg" /></li>
-        </ul>
-        @Html.Partial("_Experience")
-        @Html.Partial("_PortfolioThumbs", (object)ViewBag.ImportantProjects)
-        @Html.Partial("_GettingStart")
+        @Html.Partial("TechListOpenSource")
+        <h3 class="techhead">Java开发(Java Technologies)</h3>
+        @Html.Partial("TechListJava")
+        <h3 class="techhead">Oracle开发(Oracle Technologies)</h3>
+        @Html.Partial("TechListOracle")
+        <h3 class="techhead">iOS开发(iOS Technologies)</h3>
+        @Html.Partial("TechListiOS")
+        <h3 class="techhead">Android开发(Android Technologies)</h3>
+        @Html.Partial("TechListAndroid")
+
+        @Html.Partial("Experience")
+        @Html.Partial("PortfolioThumbs", (object)ViewBag.ImportantProjects)
+        @Html.Partial("GettingStart")
     </div>
     <div class="col-md-3">
         @Html.Partial("_Services")
-        @Html.Partial("_QuickLinks")
+        @Html.Partial("QuickLinks")
     </div>
 </div>

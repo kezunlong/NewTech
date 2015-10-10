@@ -36,5 +36,24 @@ namespace NewTech.Web.Controllers
 
             return View();
         }
+
+        public ActionResult iOSDevelopment()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByTechnology("1016", 3);
+
+            return View();
+        }
+
+        public ActionResult AndroidDevelopment()
+        {
+            ViewBag.ImportantProjects = bll.ProjectManager.SelectProjectsByTechnology("1017", 3);
+
+            return View();
+        }
+
+        public ActionResult OtherTechnology()
+        {
+            return View();
+        }
     }
 }

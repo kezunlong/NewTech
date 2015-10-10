@@ -28,16 +28,14 @@
         <p>
             我们的开发人员通过如下Oracle技术来为客户提供软件开发和运维服务：
         </p>
-        <ul class="tech-list">
-            <li><img src="~/img/oracle-database.jpg" /></li>
-            <li><img src="~/img/oracle-apex.jpg" /></li>
-        </ul>
-        @Html.Partial("_Experience")
-        @Html.Partial("_PortfolioThumbs", (object)ViewBag.ImportantProjects)
-        @Html.Partial("_GettingStart")
+        @Html.Partial("TechListOracle")
+
+        @Html.Partial("Experience")
+        @Html.Partial("PortfolioThumbs", (object)ViewBag.ImportantProjects)
+        @Html.Partial("GettingStart")
     </div>
     <div class="col-md-3">
         @Html.Partial("_Technologies")
-        @Html.Partial("_QuickLinks")
+        @Html.Partial("QuickLinks")
     </div>
 </div>

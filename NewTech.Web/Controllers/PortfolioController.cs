@@ -41,7 +41,7 @@ namespace NewTech.Web.Controllers
 
         private string GetPortfolioTitle(ProjectFilter filter)
         {
-            string title = "产品介绍";
+            string title = "案例展示";
             if(!string.IsNullOrEmpty(filter.Industry))
             {
                 title = bll.DictManager.SelectDict(filter.Industry).Name;

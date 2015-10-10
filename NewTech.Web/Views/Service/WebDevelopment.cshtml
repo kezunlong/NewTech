@@ -42,12 +42,13 @@
             <li><img src="~/img/oracle-apex.jpg" /></li>
             <li><img src="~/img/oracle-java.jpg" /></li>
         </ul>
-        @Html.Partial("_Experience")
-        @Html.Partial("_PortfolioThumbs", (object)ViewBag.ImportantProjects)
-        @Html.Partial("_GettingStart")
+
+        @Html.Partial("Experience")
+        @Html.Partial("PortfolioThumbs", (object)ViewBag.ImportantProjects)
+        @Html.Partial("GettingStart")
     </div>
     <div class="col-md-3">
         @Html.Partial("_Services")
-        @Html.Partial("_QuickLinks")
+        @Html.Partial("QuickLinks")
     </div>
 </div>
