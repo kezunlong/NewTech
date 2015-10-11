@@ -33,7 +33,7 @@ namespace NewTech.Web.Controllers
             var model = new ProjectsViewModel
             {
                 Projects = bll.ProjectManager.SelectProjects(filter, option),
-                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize, TotalItems = option.RecordCount }
+                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize5, TotalItems = option.RecordCount }
             };
 
             return PartialView(model);
@@ -64,7 +64,7 @@ namespace NewTech.Web.Controllers
             var model = new ProjectsViewModel
             {
                 Projects = bll.ProjectManager.SelectProjects(filter, option),
-                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize, TotalItems = option.RecordCount }
+                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize5, TotalItems = option.RecordCount }
             };
 
             return PartialView(model);

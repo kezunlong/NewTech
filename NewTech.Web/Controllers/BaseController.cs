@@ -50,16 +50,32 @@ namespace NewTech.Web.Controllers
 
         #endregion
 
-        protected int PageSize = 5;
+        #region Paging Option
+
+        protected int PageSize5 = 5;
+        protected int PageSize15 = 15;
 
         protected PagingOption GetPagingOption(int page)
         {
+            return GetPagingOption(page, PageSize5);
+        }
+
+        protected PagingOption GetPagingOption15(int page)
+        {
+            return GetPagingOption(page, PageSize15);
+        }
+
+        protected PagingOption GetPagingOption(int page, int pageSize)
+        {
             PagingOption option = new PagingOption();
-            option.Start = (page - 1) * PageSize + 1;
-            option.Length = PageSize;
+            option.Start = (page - 1) * pageSize + 1;
+            option.Length = pageSize;
             option.GetRecordCount = true;
             return option;
         }
+
+
+        #endregion
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {

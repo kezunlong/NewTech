@@ -6,6 +6,9 @@
     ViewBag.Title = operation;
 }
 
+<script src="~/js/ckeditor/ckeditor.js"></script>
+
+
 <h4>@operation @Model.Project.Name</h4>
 
 <div class="panel panel-default">
@@ -31,8 +34,24 @@
                 @Html.TextBoxWithLabelFor(item => item.Project.Description)
             </div>
             <div class="form-group">
+                @Html.LabelFor(item => item.Project.Status, new { @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.CheckBoxFor(item => item.Project.Status)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.TextBoxWithLabelFor(item => item.Project.Order)
+            </div>
+            <div class="form-group">
                 @Html.TextAreaWithLabelFor(item => item.Project.Contents)
             </div>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace('Project_Contents');
+            </script>
+
+
         </div>
 
         <div class="panel-footer text-center">

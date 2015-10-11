@@ -73,12 +73,12 @@ namespace NewTech.Web.Controllers
 
         public ActionResult ProjectsList(ProjectFilter filter, int page = 1)
         {
-            PagingOption option = GetPagingOption(page);
+            PagingOption option = GetPagingOption15(page);
 
             var model = new ProjectsViewModel
             {
                 Projects = bll.ProjectManager.SelectProjects(filter, option),
-                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize, TotalItems = option.RecordCount }
+                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize15, TotalItems = option.RecordCount }
             };
 
             return PartialView(model);
