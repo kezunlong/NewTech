@@ -1,0 +1,39 @@
+﻿@using NewTech.Model;
+@model IEnumerable<NewTech.Model.Dict>
+
+<div class="visible-md visible-lg" style="vertical-align:top;">
+    @{
+        // 把服务行业显示成4列，4个紧邻的无序列表
+        int columnNumber = 4;
+        int modNumber = Model.Count() % columnNumber;
+        int skippedItems = 0;
+        for (int i = 0; i < columnNumber; i++)
+        {
+            int displayItems = Model.Count() / columnNumber;
+            if (i < columnNumber - 1 && modNumber > i)
+            {
+                displayItems++;
+            }
+            if (displayItems > 0)
+            {
+                <ul class="unordered columnflexible">
+                    @foreach (Dict item in Model.Skip(skippedItems).Take(displayItems))
+                    {
+                        <li>@Html.ActionLink(@item.Name, "Industry", "Portfolio", new { id = item.Id }, null)</li>
+                    }
+                </ul>
+                    skippedItems += displayItems;
+            }
+
+        }
+    }
+</div>
+<div class="visible-sm visible-xs">
+    <ul class="unordered">
+        @foreach (Dict item in Model)
+        {
+            <li>@Html.ActionLink(@item.Name, "Industry", "Portfolio", new { id = item.Id }, null)</li>
+        }
+    </ul>
+</div>
+

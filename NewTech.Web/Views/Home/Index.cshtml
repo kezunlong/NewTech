@@ -89,45 +89,8 @@
             <hr />
         </div>
         <div class="row" style="margin: 0 0 20px 0;">
-            @{
-                List<Dict> list = ViewBag.ServicedIndustries as List<Dict>;
-            }
             <div class="box-title">我们服务的行业</div>
-            <div class="visible-md visible-lg" style="vertical-align:top;">
-                @{
-                    // 把服务行业显示成4列，4个紧邻的无序列表
-                    int columnNumber = 4;
-                    int modNumber = list.Count % columnNumber;
-                    int skippedItems = 0;
-                    for (int i = 0; i < columnNumber; i++)
-                    {
-                        int displayItems = list.Count / 4;
-                        if (i < columnNumber - 1 && modNumber > i)
-                        {
-                            displayItems++;
-                        }
-                        if (displayItems > 0)
-                        {
-                            <ul class="unordered columnflexible">
-                                @foreach(Dict item in list.Skip(skippedItems).Take(displayItems))
-                                {
-                                    <li>@Html.ActionLink(@item.Name, "Industry", "Portfolio", new { id = item.Id }, null)</li>
-                                }
-                            </ul>
-                            skippedItems += displayItems;
-                        }
-
-                    }
-                }
-            </div>
-            <div class="visible-sm visible-xs">
-                <ul class="unordered">
-                    @foreach (Dict item in list)
-                    {
-                        <li>@item.Name</li>
-                    }
-                </ul>
-            </div>
+            @Html.Partial("_IndustryColumns", ViewBag.ServicedIndustries as List<Dict>)
         </div>
         <div class="row">
             <ul class="nav nav-tabs">

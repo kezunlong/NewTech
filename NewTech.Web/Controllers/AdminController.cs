@@ -93,17 +93,18 @@ namespace NewTech.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditProject([Bind(Prefix = "Project")]Project item)
+        [ValidateInput(false)] 
+        public ActionResult EditProject([Bind(Prefix = "Project")]Project item, IEnumerable<string> technologies)
         {
             if (ModelState.IsValid)
             {
                 if (item.Id != 0)
                 {
-                    bll.ProjectManager.UpdateProject(item);
+                    bll.ProjectManager.UpdateProject(item, technologies);
                 }
                 else
                 {
-                    bll.ProjectManager.InsertProject(item);
+                    bll.ProjectManager.InsertProject(item, technologies);
                 }
 
                 TempData["message"] = new AlertMessage(string.Format("{0} has been saved", item.Name));
@@ -138,6 +139,8 @@ namespace NewTech.Web.Controllers
         {
             model.Categories = bll.DictManager.SelectDicts("Category");
             model.Customers = bll.CustomerManager.SelectCustomers();
+            model.TechnologyDicts = bll.DictManager.SelectDicts("Technology");
+            ViewBag.DictColumnsType = "Technology";
         }
 
         #endregion

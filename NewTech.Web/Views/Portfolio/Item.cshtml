@@ -1,0 +1,40 @@
+﻿@model NewTech.Web.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Item";
+}
+
+<div>
+    <div class="col-md-9">
+        @Html.Raw(@Model.Project.Contents)
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default no-radius">
+            <div class="panel-heading right-panel-heading">
+                <h4 class="panel-title">行业分类</h4>
+            </div>
+            <div class="panel-body" style="padding: 5px 10px 10px 10px;">
+                <ul class="unordered">
+                    @foreach (var item in Model.ServicedIndustries)
+                    {
+                        <li>@Html.ActionLink(item.Name, "Index", "Portfolio", new { Industry = item.Id }, null)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default no-radius">
+            <div class="panel-heading right-panel-heading">
+                <h4 class="panel-title">技术分类</h4>
+            </div>
+            <div class="panel-body" style="padding: 5px 10px 10px 10px;">
+                <ul class="unordered">
+                    @foreach (var item in Model.Technologies)
+                    {
+                        <li>@Html.ActionLink(item.Name, "Index", "Portfolio", new { Technology = item.Id }, null)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

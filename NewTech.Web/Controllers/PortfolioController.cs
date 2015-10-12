@@ -70,6 +70,19 @@ namespace NewTech.Web.Controllers
             return PartialView(model);
         }
 
+        public ActionResult Item(int id)
+        {
+            var model = new ProjectViewModel
+            {
+                Project = bll.ProjectManager.SelectProject(id),
+                ServicedApplicationCategories = bll.ProjectManager.SelectServicedApplicationCategories(),
+                ServicedIndustries = bll.ProjectManager.SelectServicedIndustries(),
+                Technologies = bll.DictManager.SelectDicts("Technology", string.Empty)
+            };
+
+            return View(model);
+        }
+
         //public PartialViewResult PortfolioThumb(int id)
         //{
         //    Project item = bll.ProjectManager.SelectProject(id);

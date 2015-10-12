@@ -12,6 +12,7 @@ namespace NewTech.Web.Controllers
         public ActionResult Index()
         {
             ViewBag.ServicedIndustries = bll.ProjectManager.SelectServicedIndustries();
+            ViewBag.DictColumnsType = "Industry";
 
             return View();
         }

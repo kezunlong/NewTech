@@ -700,6 +700,8 @@
     <Content Include="js\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="js\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="js\ckeditor\skins\moono\readme.md" />
+    <Content Include="Views\Portfolio\Item.cshtml" />
+    <Content Include="Views\Home\_IndustryColumns.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

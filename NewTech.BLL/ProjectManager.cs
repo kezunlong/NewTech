@@ -75,27 +75,52 @@ namespace NewTech.BLL
             List<string> list = _dal.ProjectRepository.SelectServicedApplicationCategories();
             return _bll.DictManager.SelectDicts().Where(dict => list.Contains(dict.Id)).ToList();
         }
-        
-        public void InsertProject(Project item)
+
+        public void InsertProject(Project item, IEnumerable<string> technologies)
         {
-            var existsItem = _dal.ProjectRepository.SelectProject(item.Name);
-            if (existsItem != null)
+            try
             {
-                string message = string.Format("Project (Name = {0}) exists.", item.Name);
-                throw new Exception(message);
+                _bll.BeginTransaction();
+
+                var existsItem = _dal.ProjectRepository.SelectProject(item.Name);
+                if (existsItem != null)
+                {
+                    string message = string.Format("Project (Name = {0}) exists.", item.Name);
+                    throw new Exception(message);
+                }
+                _dal.ProjectRepository.InsertProject(item);
+                _dal.ProjectRepository.UpdateProjectTechnologies(item.Id, technologies);
+
+                _bll.CommitTransaction();
             }
-            _dal.ProjectRepository.InsertProject(item);
+            catch
+            {
+                _bll.RollbackTransaction();
+            }
         }
 
-        public void UpdateProject(Project item)
+        public void UpdateProject(Project item, IEnumerable<string> technologies)
         {
-            var existsItem = _dal.ProjectRepository.SelectProject(item.Name);
-            if (existsItem != null && existsItem.Id != item.Id)
+            try
             {
-                string message = string.Format("Project (Name = {0}) exists.", item.Name);
-                throw new Exception(message);
+                _bll.BeginTransaction();
+
+                var existsItem = _dal.ProjectRepository.SelectProject(item.Name);
+                if (existsItem != null && existsItem.Id != item.Id)
+                {
+                    string message = string.Format("Project (Name = {0}) exists.", item.Name);
+                    throw new Exception(message);
+                }
+                _dal.ProjectRepository.UpdateProject(item);
+                _dal.ProjectRepository.UpdateProjectTechnologies(item.Id, technologies);
+
+                _bll.CommitTransaction();
             }
-            _dal.ProjectRepository.UpdateProject(item);
+            catch
+            {
+                _bll.RollbackTransaction();
+            }
+
         }
 
         public Project DeleteProject(int id)
@@ -107,5 +132,6 @@ namespace NewTech.BLL
             }
             return item;
         }
+
     }
 }

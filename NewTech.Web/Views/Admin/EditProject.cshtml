@@ -1,4 +1,5 @@
-﻿@model NewTech.Web.Models.ProjectViewModel
+﻿@using NewTech.Model;
+@model NewTech.Web.Models.ProjectViewModel
 
 @{
     bool isEdit = Model.Project.Id != 0;
@@ -8,6 +9,55 @@
 
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
+
+@helper ShowTechnologies(IEnumerable<Dict> items)
+{
+    <div class="visible-md visible-lg" style="vertical-align:top;">
+        @{
+            // 显示成3列，3个紧邻的无序列表
+            int columnNumber = 3;
+            int modNumber = items.Count() % columnNumber;
+            int skippedItems = 0;
+            for (int i = 0; i < columnNumber; i++)
+            {
+                int displayItems = items.Count() / columnNumber;
+                if (i < columnNumber - 1 && modNumber > i)
+                {
+                    displayItems++;
+                }
+                if (displayItems > 0)
+                {
+                    <ul class="unordered columnflexible">
+                        @foreach (Dict item in items.Skip(skippedItems).Take(displayItems))
+                        {
+                            <li>
+                                @if (Model.Project.TechnologyRefs.Any(x => x.Id == item.Id))
+                                {
+                                    <input type="checkbox" checked id="tech_@item.Id" name="technologies" value="@item.Id" />
+                                }
+                                else
+                                {
+                                    <input type="checkbox" id="tech_@item.Id" name="technologies" value="@item.Id" />
+                                }
+                                @item.Name 
+                            </li>
+                        }
+                    </ul>
+                        skippedItems += displayItems;
+                }
+
+            }
+        }
+    </div>
+    <div class="visible-sm visible-xs">
+        <ul class="unordered">
+            @foreach (Dict item in items)
+            {
+                <li><input type="checkbox" id="tech_@item.Id" name="technology" value="@item.Id" /> @item.Name </li>
+            }
+        </ul>
+    </div>
+}
 
 <h4>@operation @Model.Project.Name</h4>
 
@@ -42,6 +92,37 @@
             <div class="form-group">
                 @Html.TextBoxWithLabelFor(item => item.Project.Order)
             </div>
+            <div class="form-group">
+                @*@Html.DropDownListWithLabelFor(item => item.ParentTechnology, Model.TechnologyDicts.ToSelectListItems(x => x.Name, x => x.Id))*@
+                <label class="col-sm-2 control-label">Technology</label>
+                <div class="col-sm-10">
+
+                    <div class="panel panel-default" style="margin-bottom:0;">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Technologies...
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                @foreach (Dict parentDict in Model.TechnologyDicts.Where(item => string.IsNullOrEmpty(item.Parent)))
+                                {
+                                    <div class="row"><b>@parentDict.Name</b></div>
+                                    <div class="row">
+                                        @ShowTechnologies(Model.TechnologyDicts.Where(item => item.Parent == parentDict.Id))
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm=4">
+                    
+                </div>
+            </div>*@
             <div class="form-group">
                 @Html.TextAreaWithLabelFor(item => item.Project.Contents)
             </div>

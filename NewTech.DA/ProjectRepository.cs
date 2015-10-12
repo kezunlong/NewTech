@@ -23,28 +23,11 @@ namespace NewTech.DA
             var table = ExecuteDataTable(sql, option, orderBy);
             foreach (DataRow row in table.Rows)
             {
-                list.Add(DataRowToProject(row));
+                list.Add(DataRowToProject(row, false));
             }
 
             return list;
         }
-
-        //public List<Project> SelectImportantProjects(string category, int length)
-        //{
-        //    List<Project> list = new List<Project>();
-
-        //    sqlProc.Clear();
-        //    sqlProc.CommandText = string.Format("SELECT TOP {0} * FROM [dbo].[Projects] WHERE Category = @Category ORDER BY [Order] DESC", length);
-        //    sqlProc.CommandType = CommandType.Text;
-        //    sqlProc.Parameters.AddWithValue("Category", category);
-        //    var table = sqlProc.ExecuteDataTable();
-        //    foreach (DataRow row in table.Rows)
-        //    {
-        //        list.Add(DataRowToProject(row));
-        //    }
-
-        //    return list;
-        //}
 
         public Project SelectProject(int id)
         {
@@ -56,7 +39,7 @@ namespace NewTech.DA
             var table = sqlProc.ExecuteDataTable();
             if(table.Rows.Count > 0)
             {
-                item = DataRowToProject(table.Rows[0]);
+                item = DataRowToProject(table.Rows[0], true);
             }
 
             return item;
@@ -73,13 +56,13 @@ namespace NewTech.DA
             var table = sqlProc.ExecuteDataTable();
             if (table.Rows.Count > 0)
             {
-                item = DataRowToProject(table.Rows[0]);
+                item = DataRowToProject(table.Rows[0], true);
             }
 
             return item;
         }
 
-        private Project DataRowToProject(DataRow row)
+        private Project DataRowToProject(DataRow row, bool loadContents)
         {
             return new Project
             {
@@ -94,47 +77,7 @@ namespace NewTech.DA
                 Order = Tools.Convert(row["Order"], 0)
             };
         }
-
-        public List<string> SelectProjectTechnologies(int id)
-        {
-            List<string> list = new List<string>();
-
-            sqlProc.Clear();
-            sqlProc.CommandText = "SELECT * FROM [dbo].[ProjectTechnologies] WHERE ProjectId = " + id.ToString();
-            sqlProc.CommandType = CommandType.Text;
-            var table = sqlProc.ExecuteDataTable();
-            foreach (DataRow row in table.Rows)
-            {
-                var item = Tools.ConvertString(row["TechnologyId"]);
-                if (!string.IsNullOrEmpty(item))
-                {
-                    list.Add(item);
-                }
-            }
-
-            return list;
-        }
-
-        public List<string> SelectServicedApplicationCategories()
-        {
-            List<string> list = new List<string>();
-
-            sqlProc.Clear();
-            sqlProc.CommandText = "SELECT DISTINCT Category FROM [dbo].[Projects]";
-            sqlProc.CommandType = CommandType.Text;
-            var table = sqlProc.ExecuteDataTable();
-            foreach (DataRow row in table.Rows)
-            {
-                var industry = Tools.ConvertString(row["Category"]);
-                if (!string.IsNullOrEmpty(industry))
-                {
-                    list.Add(industry);
-                }
-            }
-
-            return list;
-        }
-        
+                
         public void InsertProject(Project item)
         {
             sqlProc.Clear();
@@ -158,7 +101,9 @@ VALUES
     ,@Order)";
             sqlProc.CommandType = CommandType.Text;
             AddSqlParameters(item);
-            sqlProc.ExecuteNonQuery();
+            int lastInsertId = 0;
+            sqlProc.ExecuteNonQuery(out lastInsertId);
+            item.Id = lastInsertId;
         }
 
         public void UpdateProject(Project item)
@@ -199,6 +144,73 @@ WHERE Id = @Id";
             sqlProc.Parameters.AddWithValue("Contents", item.Contents);
             sqlProc.Parameters.AddWithValue("Status", item.Status ? 1 : 0);
             sqlProc.Parameters.AddWithValue("Order", item.Order);
+        }
+
+
+        public List<string> SelectProjectTechnologies(int id)
+        {
+            List<string> list = new List<string>();
+
+            sqlProc.Clear();
+            sqlProc.CommandText = "SELECT * FROM [dbo].[ProjectTechnologies] WHERE ProjectId = " + id.ToString();
+            sqlProc.CommandType = CommandType.Text;
+            var table = sqlProc.ExecuteDataTable();
+            foreach (DataRow row in table.Rows)
+            {
+                var item = Tools.ConvertString(row["TechnologyId"]);
+                if (!string.IsNullOrEmpty(item))
+                {
+                    list.Add(item);
+                }
+            }
+
+            return list;
+        }
+
+        public void UpdateProjectTechnologies(int id, IEnumerable<string> technologies)
+        {
+            foreach(string technology in technologies)
+            {
+                if(!ExistsProjectTechnology(id, technology))
+                {
+                    sqlProc.Clear();
+                    sqlProc.CommandText = "INSERT INTO [dbo].[ProjectTechnologies]([ProjectId] ,[TechnologyId]) VALUES(@ProjectId, @TechnologyId)";
+                    sqlProc.CommandType = CommandType.Text;
+                    sqlProc.Parameters.AddWithValue("ProjectId", id);
+                    sqlProc.Parameters.AddWithValue("TechnologyId", technology);
+                    sqlProc.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private bool ExistsProjectTechnology(int id, string technology)
+        {
+            sqlProc.Clear();
+            sqlProc.CommandText = "SELECT COUNT(*) FROM [dbo].[ProjectTechnologies] WHERE ProjectId = @ProjectId AND TechnologyId = @TechnologyId";
+            sqlProc.CommandType = CommandType.Text;
+            sqlProc.Parameters.AddWithValue("ProjectId", id);
+            sqlProc.Parameters.AddWithValue("TechnologyId", technology);
+            return Tools.Convert(sqlProc.ExecuteScalar(), 0) > 0;
+        }
+
+        public List<string> SelectServicedApplicationCategories()
+        {
+            List<string> list = new List<string>();
+
+            sqlProc.Clear();
+            sqlProc.CommandText = "SELECT DISTINCT Category FROM [dbo].[Projects]";
+            sqlProc.CommandType = CommandType.Text;
+            var table = sqlProc.ExecuteDataTable();
+            foreach (DataRow row in table.Rows)
+            {
+                var industry = Tools.ConvertString(row["Category"]);
+                if (!string.IsNullOrEmpty(industry))
+                {
+                    list.Add(industry);
+                }
+            }
+
+            return list;
         }
     }
 }

@@ -65,7 +65,7 @@ namespace NewTech.Model
 
             if (!string.IsNullOrEmpty(Industry))
             {
-                where += string.Format(" AND Industry = '{0}'", Industry);
+                where += string.Format(" AND EXISTS (SELECT * FROM [dbo].[Customer] WHERE Id = Projects.Customer AND Industry = '{0}')", Industry);
             }
 
             if(!string.IsNullOrEmpty(Technology))
