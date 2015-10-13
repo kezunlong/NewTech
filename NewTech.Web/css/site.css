@@ -216,16 +216,31 @@ ul.columnflexible
     line-height: 14px;
     padding: 15px 10px;
 }
+
 .request-title {
     background: url(../img/rtarrow.gif) no-repeat scroll right 50% #3F6289;
 }
 .callus-title {
     background: url(../img/down-ar.gif) no-repeat scroll right 50% #3F6289;
 }
+
+.tab-content {
+     padding:10px; 
+     margin-bottom: 20px; 
+     overflow: hidden; 
+     border: 1px solid #ddd; 
+     border-top-width: 0;
+}
+
+.tabimg {
+    float: right;
+}
+
 .imgbdr {
     padding: 5px;
     border: #e7e7e7 solid 1px;
     background: #FFF;
+    margin-left: 10px;
 }
 
 .portbox {

@@ -94,50 +94,64 @@
         </div>
         <div class="row">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a data-toggle="tab" href="#sectionA">我们可以帮组您</a></li>
-                <li role="presentation"><a data-toggle ="tab" href="#sectionB">项目展示</a></li>
-                <li role="presentation"><a data-toggle="tab" href="#sectionC">人才招聘</a></li>
+                <li role="presentation" class="active"><a data-toggle="tab" href="#sectionA"><b>我们可以帮组您</b></a></li>
+                <li role="presentation"><a data-toggle ="tab" href="#sectionB"><b>项目展示</b></a></li>
+                <li role="presentation"><a data-toggle="tab" href="#sectionC"><b>人才招聘</b></a></li>
             </ul>
-            <div class="tab-content" style="padding:10px 0; margin-bottom: 20px; overflow: hidden; border: 1px solid #ddd; border-top-width: 0;">
-                <div id="sectionA" class="tab-pane fade in active col-sm-9">
+            <div class="tab-content">
+                <div id="sectionA" class="tab-pane fade in active">
+                    <div class="tabimg">
+                        <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                    </div>
                     <a href='@Url.Action("OurService", "Service")'>
                         系统架构和应用程序开发
                     </a>
                     <p>
-                        Content
+                        通过为企业建立定制的计算机软件，可以简化管理流程以及提升工作效率，并且对企业资源实现信息化的管理。
+                        <b>新科软件</b>为客户提供量身定制的解决方案，以帮助客户在激烈的市场竞争中保持自己的优势。
                     </p>
-                    <a href='@Url.Action("OurService", "Service")'>
-                        系统架构和应用程序开发
+                    <a href='@Url.Action("OutSourcingPartner", "Service")'>
+                        离岸外包合作伙伴
                     </a>
                     <p>
-                        Content
-                    </p>
-                </div>
-                <div id="sectionB" class="tab-pane fade col-sm-9">
-                    <a href='@Url.Action("OurService", "Service")'>
-                        系统架构和应用程序开发
-                    </a>
-                    <p>
-                        Content
-                    </p>
-                    <a href='@Url.Action("OurService", "Service")'>
-                        系统架构和应用程序开发
-                    </a>
-                    <p>
-                        Content
+                        不管您是一个拥有丰富行业知识的独立IT顾问，或者是一家软件设计公司。都希望我们能成为紧密的合作伙伴，实现知识和资源的共享与共赢。
                     </p>
                 </div>
-                <div id="sectionC" class="tab-pane fade col-sm-9">
-                    <a href='@Url.Action("OurService", "Service")'>
-                        系统架构和应用程序开发
+                <div id="sectionB" class="tab-pane fade">
+                    <div class="tabimg">
+                        <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                    </div>
+                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                        Concur Data Conversion
                     </a>
                     <p>
-                        Content
+                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                    </p>
+                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                        Concur Data Conversion
+                    </a>
+                    <p>
+                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
                     </p>
                 </div>
-                <div class="col-sm-3">
-                    <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                <div id="sectionC" class="tab-pane fade">
+                    <div class="tabimg">
+                        <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                    </div>
+                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                        Concur Data Conversion
+                    </a>
+                    <p>
+                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                    </p>
+                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                        Concur Data Conversion
+                    </a>
+                    <p>
+                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                    </p>
                 </div>
+
             </div>
         </div>
     </div>
