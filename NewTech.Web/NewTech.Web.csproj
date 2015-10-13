@@ -95,11 +95,15 @@
     <Content Include="img\big_tick.png" />
     <Content Include="img\bullet.png" />
     <Content Include="img\bullet5.png" />
+    <Content Include="img\cmmi-logo.png" />
     <Content Include="img\development.png" />
     <Content Include="img\dmca_protected_sml_120m.png" />
     <Content Include="img\down-ar.gif" />
     <Content Include="img\header_bg.gif" />
     <Content Include="img\industry.jpg" />
+    <Content Include="img\linebg.gif" />
+    <Content Include="img\menu-icon.png" />
+    <Content Include="img\microsoft-logo.png" />
     <Content Include="img\mobile-technology.jpg" />
     <Content Include="img\nasscom-member.png" />
     <Content Include="img\newtech_logo.gif" />
