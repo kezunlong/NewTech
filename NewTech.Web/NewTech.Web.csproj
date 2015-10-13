@@ -85,6 +85,11 @@
     <Content Include="css\site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\ban1-text.png" />
+    <Content Include="img\ban2-text.png" />
+    <Content Include="img\ban3-text.png" />
+    <Content Include="img\ban4-text.png" />
+    <Content Include="img\ban5-text.png" />
     <Content Include="img\banner-inn.jpg" />
     <Content Include="img\bg.gif" />
     <Content Include="img\big_tick.png" />
