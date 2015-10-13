@@ -1,4 +1,6 @@
-﻿body {
+﻿/*************************ALL PAGES***************************/
+
+body {
     padding-top: 0;
     padding-bottom: 0;
     color: #3a3a3a;
@@ -18,6 +20,26 @@ header {
     z-index: 10000;
 }
 
+.logo {
+    padding: 6px 0px 0px 0px;
+    margin: 0px;
+    float: left;
+}
+
+.sublogos {
+    padding: 12px 0px 0px 0px;
+    margin: 0px;
+    float: right;
+}
+
+.s_logo {
+    float: left;
+    padding: 0px 12px 0px 12px;
+    background: url(../img/linebg.gif) repeat-y left;
+    height: 54px;
+}
+
+
 .topheader  {
     margin: 5px 0;
 }
@@ -29,35 +51,21 @@ footer {
     padding: 10px 0;
     overflow: hidden;
 }
+
 .footlink a {
     color: #464646;
 }
+
 .footlink span {
     padding: 0 10px;
 }
+
 .footcopyright {
     color: #464646;
     font-size: 12px;
     line-height: 17px;
     margin: 0;
     padding: 15px 0 0;
-}
-
-.thumbnail .caption {
-    background: url(../img/storytop.png) top repeat-x;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.thumbnail h3 {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 0;
-    margin: 0;
-}
-
-.thumbnail hr {
-    margin: 5px 0;
 }
 
 h1 {
@@ -75,6 +83,66 @@ h3 {
     font-size: 14px;
     font-weight: bold;
     font-family: Verdana;
+}
+
+/******************************HOME PAGE**************************************/
+
+
+/*Carousel*/
+
+
+
+.ci1 {
+    background: url(../img/sculpting-thoughts.jpg);
+    background-position: center center;
+}
+
+.ci2 {
+    background: url(../img/software-development.jpg) center center;
+    width:100%;
+}
+
+.ci3 {
+    background: url(../img/technology.jpg) center center;
+    width:100%;
+}
+
+.ci4 {
+    background: url(../img/mobile-technology.jpg) center center;
+    width:100%;
+}
+
+.ci5 {
+    background: url(../img/industry.jpg) center center;
+    width:100%;
+}
+
+.ci {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+.thumbnail .caption {
+    background: url(../img/storytop.png) top repeat-x;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+.thumbnail h3 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.thumbnail hr {
+    margin: 5px 0;
 }
 
 .port_title {

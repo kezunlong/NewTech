@@ -37,20 +37,24 @@
     <header role="banner">
         <div class="topheader">
             <div class="container">
-                <div class="col-sm-6 banner-brand">
+                <div class="logo banner-brand">
                     <img src="@Url.Content("~/img/newtech_logo.gif")" />
                 </div>
-                <div class="utility-nav">
-
+                <div class="sublogos visible-md visible-lg">
+                    <div class="s_logo"><img alt="Microsoft Gold partner for software and web development" src="~/img/microsoft-logo.png" border="0" vspace="9"></div>
+                    <div class="s_logo"><img alt="CMMi level 3" src="~/img/cmmi-logo.png" border="0"></div>
+                </div>
+                <div class="sublogs visible-xs visible-sm">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="margin-top:15px;">
+                        <img src="~/img/menu-icon.png" />
+                    </button>
                 </div>
             </div>
         </div>
 
-        <nav role="navigation" class="navbar navbar-static-top navbar-default">
+        <nav role="navigation" class="navbar navbar-default">
             <div class="container">
-                <div class="navbar-header">
-                </div>
-                <div>
+                <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href='@Url.Action("Index", "Home")'><span class="icon fa fa-home"></span> 首页</a></li>
                         <li class="dropdown">
