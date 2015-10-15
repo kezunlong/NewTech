@@ -10,6 +10,7 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" type="text/css" href="~/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="~/css/main.css" />
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
 
@@ -41,7 +42,7 @@
                     <img src="@Url.Content("~/img/newtech_logo.gif")" />
                 </div>
                 <div class="sublogos visible-md visible-lg">
-                    <div class="s_logo"><img alt="Microsoft Gold partner for software and web development" src="~/img/microsoft-logo.png" border="0" vspace="9"></div>
+                    <div class="s_logo"><img alt="Microsoft Gold partner for software and web development" src="~/img/microsoft-logo.png" border="0" style="margin: 9px 0;"></div>
                     <div class="s_logo"><img alt="CMMi level 3" src="~/img/cmmi-logo.png" border="0"></div>
                 </div>
                 <div class="sublogs visible-xs visible-sm">
@@ -89,7 +90,7 @@
                                 <li>@Html.ActionLink("远景与价值", "VisionAndValue", "AboutUS")</li>
                             </ul>
                         </li>
-                        <li>@Html.ActionLink("联系我们", "Index", "ContactUS")</li>
+                        <li>@Html.ActionLink("联系我们", "ContactUS", "AboutUS")</li>
                     </ul>
                 </div>
             </div>
@@ -100,7 +101,7 @@
 
         @RenderSection("Carousel", false)
 
-        <div class="container" style="margin-top: 15px;">
+        <div class="container body-nocarousel">
 
             @if (TempData["message"] != null)
             {

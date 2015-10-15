@@ -82,6 +82,7 @@
   <ItemGroup>
     <Content Include="App_Data\NewTechnology.sql" />
     <Content Include="css\main.css" />
+    <Content Include="css\reset.css" />
     <Content Include="css\site.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
@@ -502,6 +503,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutUSController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -711,6 +713,11 @@
     <Content Include="js\ckeditor\skins\moono\readme.md" />
     <Content Include="Views\Portfolio\Item.cshtml" />
     <Content Include="Views\Home\_IndustryColumns.cshtml" />
+    <Content Include="Views\AboutUS\Company.cshtml" />
+    <Content Include="Views\AboutUS\_AboutUS.cshtml" />
+    <Content Include="Views\AboutUS\WhyNewTech.cshtml" />
+    <Content Include="Views\AboutUS\VisionAndValue.cshtml" />
+    <Content Include="Views\AboutUS\ContactUS.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

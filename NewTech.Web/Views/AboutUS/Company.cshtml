@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "公司介绍";
+}
+
+<div>
+    <div class="col-md-9">
+        <h3>公司介绍</h3>
+        <hr />
+        <p>
+            新科软件是一家注册在上海，致力于电子商务平台开发与管理信息系统研发的高科技企业。我们面向中国以及美国、欧洲、澳大利亚等全球客户提供开发和运维服务。
+            公司拥有多年的定制软件开发、Web系统B2B、B2C网站开发、ERP系统、OA、CRM等管理信息系统的研发实施积累。同时拥有一支团结协作、素质过硬、技术一流的研发与实施团队。
+            新科软件提供 @Html.ActionLink("软件开发技术外包服务", "ApplicationDevelopment", "Service")，我们的解决方案致力于为客户提供安全、健壮和可扩展的商业系统。
+            通过我们低成本、高质量和可靠的软件开发服务，为我们的客户赢得市场竞争力和创造最大价值。 
+        </p>
+        <p class="hidden">
+            Legal Information : NetTech is registered with government of India and Import-Export license code is 0810004291
+        </p>
+        <h4 class="subtitle">我们为客户创造价值</h4>
+        <p>
+            新科软件在软件开发过程中，针对客户的不同需求需求，我们致力于提供非常灵活和高效的环境，以实现客户利益的最大化。
+            能否为客户提供高质量的产品是我们一切工作的前提，我们相信，每一天的付出都会为客户带来效益。并且，这也是我们赢得客户信任的最佳方式。
+        </p>
+        <h4 class="subtitle">质量至上、追求卓越</h4>
+        <p>
+            因为致力于为世界各地的客户提供软件开发服务，我们严格要求自己为用户提供高质量的软件产品。我们相信，每一次努力都会有收获。
+            如何以低成本的方式为客户提供优秀可靠的服务正在驱动着软件外包行业的发展，我们将始终紧跟行业发展的潮流。
+        </p>
+        <h4 class="subtitle">重视员工</h4>
+        <p>
+            员工是所有服务行业的关键资源，好的员工才会带来好的客户满意度。我们高度关注员工的工作环境和发展前景，新科软件确保为每位员工提供施展才华的空间和激动人心的职业发展机会。
+        </p>
+        <p class="clsheading hidden">
+            Culture at TatvaSoft is governed by 3 I’s; Innovate Constantly, Illuminate its environment with learning and Integrate with knowledge sharing.
+        </p>
+    </div>
+    <div class="col-md-3">
+        @Html.Partial("_AboutUS")
+        @Html.Partial("QuickLinks")
+    </div>
+</div>

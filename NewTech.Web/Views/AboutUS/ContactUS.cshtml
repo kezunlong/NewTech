@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "联系我们";
+}
+
+<div>
+    <div class="col-md-9">
+        <h3>联系我们</h3>
+        <hr />
+        <p>
+            <b>E-mail</b><br />
+            General Information : info@tatvasoft.com<br />
+            Business Development : business@tatvasoft.com<br />
+            Careers : career@tatvasoft.com
+        </p>
+        <p></p><br />
+        <div class="row">
+            <div class="col-md-6">
+                <b>Sydney, Australia:</b><br />
+                Suite 1A, Level 2, 802 Pacific Hwy<br />
+                Gordon, Sydney NSW 2072,<br />
+                Tel : +61 2 9844 5446<br />
+                Fax : +61 2 9844 5445<br />
+            </div>
+            <div class="col-md-6">
+                <b>Sydney, Australia:</b><br />
+                Suite 1A, Level 2, 802 Pacific Hwy<br />
+                Gordon, Sydney NSW 2072,<br />
+                Tel : +61 2 9844 5446<br />
+                Fax : +61 2 9844 5445<br />
+            </div>
+        </div>
+        <p></p><br />
+        <div class="row">
+            <div class="col-md-6">
+                <b>Sydney, Australia:</b><br />
+                Suite 1A, Level 2, 802 Pacific Hwy<br />
+                Gordon, Sydney NSW 2072,<br />
+                Tel : +61 2 9844 5446<br />
+                Fax : +61 2 9844 5445<br />
+            </div>
+            <div class="col-md-6">
+                <b>Sydney, Australia:</b><br />
+                Suite 1A, Level 2, 802 Pacific Hwy<br />
+                Gordon, Sydney NSW 2072,<br />
+                Tel : +61 2 9844 5446<br />
+                Fax : +61 2 9844 5445<br />
+            </div>
+        </div>
+        <p></p><br />
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default no-radius">
+            <div class="panel-heading right-panel-heading request-title">
+                <a title="投标申请/报价咨询" href='@Url.Action("RequestForProposal", "Home")'>
+                    <span class="icon fa fa-envelope" style="font-size: 20px; margin-right: 10px;"></span>
+                    <span class="panel-title">投标申请/报价咨询</span>
+                </a>
+            </div>
+        </div>
+        @Html.Partial("_AboutUS")
+        @Html.Partial("QuickLinks")
+    </div>
+</div>

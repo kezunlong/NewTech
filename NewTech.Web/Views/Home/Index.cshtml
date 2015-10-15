@@ -61,13 +61,17 @@
 <div class="row">
     <div class="col-md-9">
         <div class="row">
-            <b>新科软件</b>是一家基于上海的高新软件信息公司，致力于为客户按时提供高质量、可维护和经济的软件产品和服务。我们是一群充满活力和梦想的年轻人和创业者，通过多年的技术积累，获得了丰富的软件开发经验和项目管理能力。想客户之所想，我们通过高品质的软件产品为您提供了行业的领先优势，为客户的业务发展提供了可靠和高效的技术支持。
+            <div class="col-md-12">
+                <b>新科软件</b>是一家基于上海的高新软件信息公司，致力于为客户按时提供高质量、可维护和经济的软件产品和服务。我们是一群充满活力和梦想的年轻人和创业者，通过多年的技术积累，获得了丰富的软件开发经验和项目管理能力。想客户之所想，我们通过高品质的软件产品为您提供了行业的领先优势，为客户的业务发展提供了可靠和高效的技术支持。
+            </div>
         </div>
         <div class="row">
-            <hr />
+            <div class="col-md-12">
+                <hr />
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-4" style="border-right:1px solid #eee">
+            <div class="col-md-4 subboxes">
                 <div class="box-title"><span class="sprites ic-services"></span>我们提供的服务</div>
                 <ul class="unordered">
                     <li>@Html.ActionLink("系统架构和应用程序开发", "ApplicationDevelopment", "Service")</li>
@@ -80,7 +84,7 @@
                     <li>@Html.ActionLink("iPhone 开发", "iPhoneDevelopment", "Technology")</li>
                 </ul>
             </div>
-            <div class="col-md-4" style="border-right:1px solid #eee">
+            <div class="col-md-4 subboxes">
                 <div class="box-title"><span class="sprites ic-services"></span>我们的优势</div>
                 <ul class="unordered">
                     <li>客户至上的服务理念</li>
@@ -106,72 +110,76 @@
             </div>
         </div>
         <div class="row">
-            <hr />
+            <div class="col-md-12">
+                <hr />
+            </div>
         </div>
         <div class="row" style="margin: 0 0 20px 0;">
             <div class="box-title">我们服务的行业</div>
             @Html.Partial("_IndustryColumns", ViewBag.ServicedIndustries as List<Dict>)
         </div>
         <div class="row">
-            <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a data-toggle="tab" href="#sectionA"><b>我们可以帮组您</b></a></li>
-                <li role="presentation"><a data-toggle ="tab" href="#sectionB"><b>项目展示</b></a></li>
-                <li role="presentation"><a data-toggle="tab" href="#sectionC"><b>人才招聘</b></a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="sectionA" class="tab-pane fade in active">
-                    <div class="tabimg">
-                        <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a data-toggle="tab" href="#sectionA"><b>我们可以帮组您</b></a></li>
+                    <li role="presentation"><a data-toggle="tab" href="#sectionB"><b>项目展示</b></a></li>
+                    <li role="presentation"><a data-toggle="tab" href="#sectionC"><b>人才招聘</b></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="sectionA" class="tab-pane fade in active">
+                        <div class="tabimg">
+                            <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                        </div>
+                        <a href='@Url.Action("OurService", "Service")'>
+                            系统架构和应用程序开发
+                        </a>
+                        <p>
+                            通过为企业建立定制的计算机软件，可以简化管理流程以及提升工作效率，并且对企业资源实现信息化的管理。
+                            <b>新科软件</b>为客户提供量身定制的解决方案，以帮助客户在激烈的市场竞争中保持自己的优势。
+                        </p>
+                        <a href='@Url.Action("OutSourcingPartner", "Service")'>
+                            离岸外包合作伙伴
+                        </a>
+                        <p>
+                            不管您是一个拥有丰富行业知识的独立IT顾问，或者是一家软件设计公司。都希望我们能成为紧密的合作伙伴，实现知识和资源的共享与共赢。
+                        </p>
                     </div>
-                    <a href='@Url.Action("OurService", "Service")'>
-                        系统架构和应用程序开发
-                    </a>
-                    <p>
-                        通过为企业建立定制的计算机软件，可以简化管理流程以及提升工作效率，并且对企业资源实现信息化的管理。
-                        <b>新科软件</b>为客户提供量身定制的解决方案，以帮助客户在激烈的市场竞争中保持自己的优势。
-                    </p>
-                    <a href='@Url.Action("OutSourcingPartner", "Service")'>
-                        离岸外包合作伙伴
-                    </a>
-                    <p>
-                        不管您是一个拥有丰富行业知识的独立IT顾问，或者是一家软件设计公司。都希望我们能成为紧密的合作伙伴，实现知识和资源的共享与共赢。
-                    </p>
-                </div>
-                <div id="sectionB" class="tab-pane fade">
-                    <div class="tabimg">
-                        <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                    <div id="sectionB" class="tab-pane fade">
+                        <div class="tabimg">
+                            <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                        </div>
+                        <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                            Concur Data Conversion
+                        </a>
+                        <p>
+                            Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                        </p>
+                        <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                            Concur Data Conversion
+                        </a>
+                        <p>
+                            Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                        </p>
                     </div>
-                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
-                        Concur Data Conversion
-                    </a>
-                    <p>
-                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
-                    </p>
-                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
-                        Concur Data Conversion
-                    </a>
-                    <p>
-                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
-                    </p>
-                </div>
-                <div id="sectionC" class="tab-pane fade">
-                    <div class="tabimg">
-                        <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                    <div id="sectionC" class="tab-pane fade">
+                        <div class="tabimg">
+                            <img src="~/img/development.png" class="imgbdr" style="width:180px; height:150px;">
+                        </div>
+                        <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                            Concur Data Conversion
+                        </a>
+                        <p>
+                            Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                        </p>
+                        <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
+                            Concur Data Conversion
+                        </a>
+                        <p>
+                            Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
+                        </p>
                     </div>
-                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
-                        Concur Data Conversion
-                    </a>
-                    <p>
-                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
-                    </p>
-                    <a href='@Url.Action("Item", "Portfolio", new { Id = 1 })'>
-                        Concur Data Conversion
-                    </a>
-                    <p>
-                        Concur是一个为全球企业提供商务旅行和差旅费报销的解决方案。Concur Data Conversion则是我们为美国客户Ingersoll Rand开发的Web系统，用于Concur与公司的ERP系统、银行系统间的数据转换与接口。
-                    </p>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>

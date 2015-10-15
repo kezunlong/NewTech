@@ -11,6 +11,10 @@ body {
     padding: 119px 0 0 0;
 }
 
+.body-nocarousel {
+    padding: 15px;
+}
+
 header {
     background: #1e4069 top repeat-x;   /*url(../images/bg.gif) */
     height: 119px;
@@ -68,29 +72,22 @@ footer {
     padding: 15px 0 0;
 }
 
-h1 {
-    padding: 10px 0px 6px 0px;
-    margin: 0px 0px 10px 0px;
-    color: #434343;
-    line-height: 20px;
-    font-size: 26px;
-    font-weight: normal;
+.subtitle {
+    color: #e28f14;
+    text-transform: uppercase;
+    padding: 5px 0;
 }
 
-h3 {
-    padding: 8px 0px 2px 0px;
-    margin: 0px;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: Verdana;
+.bot-pad {
+    padding-bottom: 4px !important;
+    margin: 0 !important;
 }
+
 
 /******************************HOME PAGE**************************************/
 
 
 /*Carousel*/
-
-
 
 .ci1 {
     background: url(../img/sculpting-thoughts.jpg);
@@ -149,15 +146,6 @@ h3 {
     padding: 0 0 5px 0 !important;
 }
 
-h3.subtitle {
-    font-size: 20px;
-    line-height: 1;
-    color: #e28f14;
-    text-transform: uppercase;
-    padding: 0 0 8px 0;
-    margin: 0;
-    font-weight: normal;
-}
 
 
 .query-form input, .query-form select {
@@ -172,12 +160,18 @@ dt {
     margin-top: 10px;
 }
 
+.subboxes {
+    /*background: url(../images/dot.png) right center repeat-y;*/
+    border-right: 1px solid #ddd;
+    min-height: 220px;
+}
+
 .box-title {
     color: #555;
     font-size: 15px;
     font-weight: bold;
     line-height: 25px;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
 }
 
@@ -195,14 +189,14 @@ dt {
 }
 
 ul.unordered {
-    padding: 5px 0px 0px 5px;
-    margin: 0px;
+    padding: 0 0 0 10px;
+    margin: 0;
     list-style: none;
 }
 
 ul.unordered li {
     padding: 0px 0px 0px 12px;
-    margin: 7px 0px 7px 0px;
+    margin: 6px 0px 6px 0px;
     background: url(../img/sublink_bul.gif) no-repeat 0px 6px;
     line-height: 16px;
 }
@@ -411,4 +405,11 @@ a.contact_link {
 
 #page-margins img {
     border: 1px solid #ddd;
+}
+
+p.clsheading {
+    padding-top: 10px !important;
+    padding-bottom: 7px !important;
+    font-weight: bold;
+    color: #5280b5;
 }
