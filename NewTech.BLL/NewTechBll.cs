@@ -134,6 +134,19 @@ namespace NewTech.BLL
             }
         }
 
+        private ProposalManager proposalManager;
+        public ProposalManager ProposalManager
+        {
+            get
+            {
+                if (proposalManager == null)
+                {
+                    proposalManager = new ProposalManager(this);
+                }
+                return proposalManager;
+            }
+        }
+
         #endregion
 
     }

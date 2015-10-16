@@ -718,6 +718,7 @@
     <Content Include="Views\AboutUS\WhyNewTech.cshtml" />
     <Content Include="Views\AboutUS\VisionAndValue.cshtml" />
     <Content Include="Views\AboutUS\ContactUS.cshtml" />
+    <Content Include="Views\Home\RequestForProposal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

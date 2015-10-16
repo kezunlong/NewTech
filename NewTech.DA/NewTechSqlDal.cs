@@ -142,6 +142,19 @@ namespace NewTech.DA
             }
         }
 
+        private ProposalRepository proposalRepository;
+        public ProposalRepository ProposalRepository
+        {
+            get
+            {
+                if (proposalRepository == null)
+                {
+                    proposalRepository = new ProposalRepository(this);
+                }
+                return proposalRepository;
+            }
+        }
+
         #endregion
     }
 }

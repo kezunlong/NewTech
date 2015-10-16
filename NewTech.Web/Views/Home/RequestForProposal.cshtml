@@ -1,0 +1,76 @@
+﻿@model NewTech.Model.Proposal
+
+@{
+    ViewBag.Title = "Request For Proposal";
+}
+
+<div>
+    <div class="col-md-9">
+        <h3>投标申请 | 报价咨询</h3>
+        <hr />
+        <p>
+            请为您的项目填写如下表单。或者，您也可以直接把项目需求发送邮件到 <a href="mailto:business@tatvasoft.com">business@tatvasoft.com</a>。
+        </p>
+
+        <div class="panel panel-default">
+            @using (Html.BeginForm("EditProject", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <div class="panel-body edit-form">
+                    @Html.ValidationSummary()
+                    @Html.HiddenFor(item => item.Id)
+
+                    <div class="form-group">
+                        @Html.TextBoxWithLabelFor(item => item.Name)
+                        @Html.TextBoxWithLabelFor(item => item.JobTitle)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxWithLabelFor(item => item.Email)
+                        @Html.TextBoxWithLabelFor(item => item.Telephone)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxWithLabelFor(item => item.CompanyName)
+                    </div>
+                    <h4 class="subtitle" style="margin-top:30px;">项目详情</h4>
+                    <div class="form-group">
+                        @Html.TextBoxWithLabelFor(item => item.ProjectTitle)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextBoxWithLabelFor(item => item.Technology)
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(item => item.UploadDocument1, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            <input type="file" name="UploadDocument1" style="width:500px; height:27px;" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(item => item.UploadDocument2, new { @class = "col-sm-2 control-label" })
+                        <div class="col-sm-10">
+                            <input type="file" name="UploadDocument2" style="width:500px; height:27px;" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.TextAreaWithLabelFor(item => item.Description)
+                    </div>
+                    <div class="form-group">
+                        @Html.TextAreaWithLabelFor(item => item.OtherComments)
+                    </div>
+                </div>
+
+                <div class="panel-footer text-center">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="icon fa fa-save"></span>
+                        Save
+                    </button>
+                </div>
+            }
+        </div>
+
+
+
+    </div>
+    <div class="col-md-3">
+        @*@Html.Partial("_AboutUS")*@
+        @Html.Partial("QuickLinks")
+    </div>
+</div>

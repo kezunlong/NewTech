@@ -16,5 +16,10 @@ namespace NewTech.Web.Controllers
 
             return View();
         }
+
+        public ActionResult RequestForProposal()
+        {
+            return View();
+        }
     }
 }
