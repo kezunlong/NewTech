@@ -4,35 +4,35 @@
     ViewBag.Title = "Request For Proposal";
 }
 
-<div>
+<div class="row">
     <div class="col-md-9">
         <h3>投标申请 | 报价咨询</h3>
-        <hr />
+        <hr class="header-line" />
         <p>
             请为您的项目填写如下表单。或者，您也可以直接把项目需求发送邮件到 <a href="mailto:business@tatvasoft.com">business@tatvasoft.com</a>。
         </p>
 
         <div class="panel panel-default">
-            @using (Html.BeginForm("EditProject", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("RequestForProposal", "Home", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data", role = "form" }))
             {
                 <div class="panel-body edit-form">
                     @Html.ValidationSummary()
                     @Html.HiddenFor(item => item.Id)
 
                     <div class="form-group">
-                        @Html.TextBoxWithLabelFor(item => item.Name)
+                        @Html.TextBoxWithLabelFor(item => item.Name, new { @class = "form-control input-sm required" })
                         @Html.TextBoxWithLabelFor(item => item.JobTitle)
                     </div>
                     <div class="form-group">
-                        @Html.TextBoxWithLabelFor(item => item.Email)
-                        @Html.TextBoxWithLabelFor(item => item.Telephone)
+                        @Html.TextBoxWithLabelFor(item => item.Email, new { @class = "form-control input-sm required" })
+                        @Html.TextBoxWithLabelFor(item => item.Telephone, new { @class = "form-control input-sm required" })
                     </div>
                     <div class="form-group">
-                        @Html.TextBoxWithLabelFor(item => item.CompanyName)
+                        @Html.TextBoxWithLabelFor(item => item.CompanyName, new { @class = "form-control input-sm required" })
                     </div>
                     <h4 class="subtitle" style="margin-top:30px;">项目详情</h4>
                     <div class="form-group">
-                        @Html.TextBoxWithLabelFor(item => item.ProjectTitle)
+                        @Html.TextBoxWithLabelFor(item => item.ProjectTitle, new { @class = "form-control input-sm required" })
                     </div>
                     <div class="form-group">
                         @Html.TextBoxWithLabelFor(item => item.Technology)
@@ -40,13 +40,15 @@
                     <div class="form-group">
                         @Html.LabelFor(item => item.UploadDocument1, new { @class = "col-sm-2 control-label" })
                         <div class="col-sm-10">
-                            <input type="file" name="UploadDocument1" style="width:500px; height:27px;" />
+                            <input type="file" name="files" style="width:500px; height:27px;" />
+                            @Html.HiddenFor(item => item.UploadDocument1)
                         </div>
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(item => item.UploadDocument2, new { @class = "col-sm-2 control-label" })
                         <div class="col-sm-10">
-                            <input type="file" name="UploadDocument2" style="width:500px; height:27px;" />
+                            <input type="file" name="files" style="width:500px; height:27px;" />
+                            @Html.HiddenFor(item => item.UploadDocument2)
                         </div>
                     </div>
                     <div class="form-group">

@@ -1,0 +1,23 @@
+﻿@{
+    BreadCrum.Instance.Initialize(Server.MapPath("~/Infrastructure/BreadCrum.xml"));
+    string controller = ViewContext.RouteData.Values["controller"].ToString();
+    string action = ViewContext.RouteData.Values["action"].ToString();
+    var list = BreadCrum.Instance.GetBreadCrumsForAction(controller, action).ToList();
+    if (list != null && list.Count > 1)
+    {
+        <ol class="breadcrumb">
+            @for (int i = 0; i < list.Count(); i++)
+            {
+                var item = list[i];
+                if (i == list.Count() - 1)
+                {
+                    <li class="active">@item.Text</li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action(item.Action, item.Controller)">@item.Text</a></li>
+                }
+            }
+        </ol>
+    }
+}

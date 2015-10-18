@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Item Controller="Home" Action="Index" Text="首页">
+  <Items>
+    <Item Controller="Service" Action="OurServices" Text="服务项目">
+      <Items>
+        <Item Controller="Service" Action="OurServices" Text="我们的服务" />
+        <Item Controller="Service" Action="ApplicationDevelopment" Text="应用程序开发" />
+        <Item Controller="Service" Action="WebDevelopment" Text="Web网站开发" />
+        <Item Controller="Service" Action="SoftwareMigration" Text="系统迁移与重构" />
+        <Item Controller="Service" Action="ApplicationMaintenance" Text="应用程序维护" />
+      </Items>
+    </Item>
+    <Item Controller="Technology" Action="MicrosoftDotNet" Text="技术专长">
+      <Items>
+        <Item Controller="Technology" Action="MicrosoftDotNet" Text="Microsoft .NET" />
+        <Item Controller="Technology" Action="JavaDevelopment" Text="Java 开发" />
+        <Item Controller="Technology" Action="OracleDevelopment" Text="Oracle 数据库管理与开发" />
+        <Item Controller="Technology" Action="SharepointDevelopment" Text="Sharepoint 开发" />
+        <Item Controller="Technology" Action="iOSDevelopment" Text="iPhone 应用开发" />
+        <Item Controller="Technology" Action="AndroidDevelopment" Text="Android 应用开发" />
+        <Item Controller="Technology" Action="OtherTechnology" Text="其他技术" />
+      </Items>
+    </Item>
+    <Item Controller="Portfolio" Action="Index" Text="案例展示">
+      <Items>
+        <Item Controller="Portfolio" Action="Item" Text="案例" />
+      </Items>
+    </Item>
+    <Item Controller="AboutUS" Action="Company" Text="关于我们">
+      <Items>
+        <Item Controller="AboutUS" Action="Company" Text="公司介绍" />
+        <Item Controller="AboutUS" Action="WhyNewTech" Text="我们的优势" />
+        <Item Controller="AboutUS" Action="VisionAndValue" Text="远景与价值" />
+      </Items>
+    </Item>
+    <Item Controller="AboutUS" Action="ContactUS" Text="联系我们" />
+  </Items>
+</Item>

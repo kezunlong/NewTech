@@ -161,6 +161,7 @@
     <Content Include="img\tech\oracle-apex.jpg" />
     <Content Include="img\tech\oracle-database.jpg" />
     <Content Include="img\tech\sharepoint-2013.jpg" />
+    <Content Include="Infrastructure\BreadCrum.xml" />
     <Content Include="js\bootstrap-hover-dropdown.js" />
     <Content Include="js\bootstrap-hover-dropdown.min.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -513,6 +514,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\BreadCrum.cs" />
     <Compile Include="Infrastructure\CustomHelper.cs" />
     <Compile Include="Infrastructure\MvcPaging.cs" />
     <Compile Include="Infrastructure\SessionHelper.cs" />
@@ -719,6 +721,9 @@
     <Content Include="Views\AboutUS\VisionAndValue.cshtml" />
     <Content Include="Views\AboutUS\ContactUS.cshtml" />
     <Content Include="Views\Home\RequestForProposal.cshtml" />
+    <Content Include="Views\Home\ProposalSucceed.cshtml" />
+    <Content Include="less\_breadcrumbs.less" />
+    <Content Include="Views\Shared\BreadCrum.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -727,6 +732,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\uploads\proposal\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

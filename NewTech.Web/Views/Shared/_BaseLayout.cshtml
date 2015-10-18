@@ -102,7 +102,9 @@
         @RenderSection("Carousel", false)
 
         <div class="container body-nocarousel">
-
+            
+            @Html.Partial("BreadCrum")
+                
             @if (TempData["message"] != null)
             {
                 var alert = TempData["message"] as AlertMessage;

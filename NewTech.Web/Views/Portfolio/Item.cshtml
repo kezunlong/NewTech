@@ -4,9 +4,13 @@
     ViewBag.Title = "Item";
 }
 
-<div>
+<div class="row">
     <div class="col-md-9">
-        @Html.Raw(@Model.Project.Contents)
+        <h3>@Model.Project.Name</h3>
+        <hr class="header-line" />
+        <div>
+            @Html.Raw(@Model.Project.Contents)
+        </div>
     </div>
     <div class="col-md-3">
         <div class="panel panel-default no-radius">

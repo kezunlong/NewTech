@@ -4,10 +4,10 @@
     ViewBag.Title = "案例展示";
 }
 
-<div>
+<div class="row">
     <div class="col-md-9">
         <h3>@ViewBag.PortfolioTitle</h3>
-        <hr />
+        <hr class="header-line" />
         <div id="queryResult">
             @Html.Action("PortfolioList", Model.Filter)
         </div>

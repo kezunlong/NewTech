@@ -12,7 +12,7 @@ body {
 }
 
 .body-nocarousel {
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 header {
@@ -78,11 +78,26 @@ footer {
     padding: 5px 0;
 }
 
+.porttitle {
+    text-transform: uppercase;
+    padding: 5px 0;
+}
+
 .bot-pad {
     padding-bottom: 4px !important;
     margin: 0 !important;
 }
 
+hr.header-line {
+    margin-top: 0;
+} 
+
+.breadcumb2 {
+    padding: 10px 0px 5px 0px;
+    margin: 0px;
+    color: #808080;
+    font-size: 11px;
+}
 
 /******************************HOME PAGE**************************************/
 
@@ -142,11 +157,15 @@ footer {
     margin: 5px 0;
 }
 
-.port_title {
-    padding: 0 0 5px 0 !important;
+
+
+.validation-summary-errors {
+    color: red;
 }
 
-
+.error {
+    color: red;
+}
 
 .query-form input, .query-form select {
     margin-right: 10px;
@@ -158,6 +177,11 @@ div.edit-form {
 
 dt {
     margin-top: 10px;
+}
+
+input.required {
+    border-left: 2px solid #3F6289;
+    /*border-left: 2px solid #ff0000;*/
 }
 
 .subboxes {
