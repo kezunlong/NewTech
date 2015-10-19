@@ -42,6 +42,10 @@
                         <div class="col-sm-10">
                             <input type="file" name="files" style="width:500px; height:27px;" />
                             @Html.HiddenFor(item => item.UploadDocument1)
+                            @if (!string.IsNullOrEmpty(Model.UploadDocument1))
+                            {
+                                <a href="@Model.UploadDocument1">@System.IO.Path.GetFileName(Model.UploadDocument1)</a>
+                            }
                         </div>
                     </div>
                     <div class="form-group">
@@ -49,6 +53,10 @@
                         <div class="col-sm-10">
                             <input type="file" name="files" style="width:500px; height:27px;" />
                             @Html.HiddenFor(item => item.UploadDocument2)
+                            @if (!string.IsNullOrEmpty(Model.UploadDocument2))
+                            {
+                                <a href="@Model.UploadDocument2">@System.IO.Path.GetFileName(Model.UploadDocument2)</a>
+                            }
                         </div>
                     </div>
                     <div class="form-group">

@@ -11,7 +11,7 @@
                 var item = list[i];
                 if (i == list.Count() - 1)
                 {
-                    <li class="active">@item.Text</li>
+                    <li class="active">@if(!string.IsNullOrEmpty(item.Text)) { @item.Text } else { @ViewBag.Title } </li>
                 }
                 else
                 {

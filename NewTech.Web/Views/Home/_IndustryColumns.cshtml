@@ -19,7 +19,9 @@
                 <ul class="unordered columnflexible">
                     @foreach (Dict item in Model.Skip(skippedItems).Take(displayItems))
                     {
-                        <li>@Html.ActionLink(@item.Name, "Industry", "Portfolio", new { id = item.Id }, null)</li>
+                        <li>
+                            @Html.ActionLink(item.Name, "Index", "Portfolio", new { Industry = item.Id }, null)
+                        </li>
                     }
                 </ul>
                     skippedItems += displayItems;

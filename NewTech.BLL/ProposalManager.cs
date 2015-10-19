@@ -32,9 +32,14 @@ namespace NewTech.BLL
             _dal.ProposalRepository.UpdateProposal(item);
         }
 
-        public void DeleteProposal(int id)
+        public Proposal DeleteProposal(int id)
         {
-            _dal.ProposalRepository.DeleteProposal(id);
+            var item = SelectProposal(id);
+            if (item != null)
+            {
+                _dal.ProposalRepository.DeleteProposal(id);
+            }
+            return item;
         }
     }
 }

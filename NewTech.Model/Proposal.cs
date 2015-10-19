@@ -63,7 +63,7 @@ namespace NewTech.Model
 
             if (!string.IsNullOrEmpty(FuzzyItem))
             {
-                result += string.Format(" AND ([Name] LIKE {0} OR [Email] LIKE {0} OR [Telephone] LIKE {0} OR [CompanyName] LIKE {0} OR [ProjectTitle] LIKE {0})", FuzzyItem);
+                result += string.Format(" AND ([Name] LIKE '%{0}%' OR [Email] LIKE '%{0}%' OR [Telephone] LIKE '%{0}%' OR [CompanyName] LIKE '%{0}%' OR [ProjectTitle] LIKE '%{0}%')", FuzzyItem);
             }
 
             return result;

@@ -137,12 +137,14 @@ namespace NewTech.Web.Infrastructure
 
             ulTag.InnerHtml = links.ToString();
 
-            string result = @"<table style=""border:0; border-collapse:collapse;"">
-	<tr>
-		<td>{0}</td>
-		<td>{1}</td>
-	</tr>
-</table>";
+//            string result = @"<table style=""border:0; border-collapse:collapse;"">
+//	<tr>
+//		<td>{0}</td>
+//		<td>{1}</td>
+//	</tr>
+//</table>";
+
+            string result = "{0}{1}";
             bool isCustomerInfoLeft = UIOption.CustomInfoPosition != "right";
             result = string.Format(result, isCustomerInfoLeft ? customInfo : ulTag.ToString(), isCustomerInfoLeft ? ulTag.ToString() : customInfo);
             return new MvcHtmlString(result.ToString());

@@ -144,5 +144,40 @@ namespace NewTech.Web.Controllers
         }
 
         #endregion
+
+        #region Proposals
+
+        public ActionResult Proposals(ProposalFilter filter)
+        {
+            var model = new ProposalsViewModel
+            {
+                Filter = filter
+            };
+            return View(model);
+        }
+
+        public ActionResult ProposalsList(ProposalFilter filter, int page = 1)
+        {
+            PagingOption option = GetPagingOption15(page);
+
+            var model = new ProposalsViewModel
+            {
+                Proposals = bll.ProposalManager.SelectProposals(filter, option),
+                PagingOption = new WebPagingOption { CurrentPage = page, ItemsPerPage = PageSize15, TotalItems = option.RecordCount }
+            };
+
+            return PartialView(model);
+        }
+
+        public ActionResult DeleteProposal(int id)
+        {
+            var item = bll.ProposalManager.DeleteProposal(id);
+            if (item != null)
+            {
+                TempData["message"] = new AlertMessage(string.Format("{0} has been deleted", item.ProjectTitle));
+            }
+            return RedirectToAction("Proposals");
+        }
+        #endregion
     }
 }

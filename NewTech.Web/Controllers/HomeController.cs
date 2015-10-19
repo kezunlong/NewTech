@@ -20,9 +20,18 @@ namespace NewTech.Web.Controllers
             return View();
         }
 
-        public ActionResult RequestForProposal()
+        public ActionResult RequestForProposal(int id = 0)
         {
-            return View(new Proposal());
+            Proposal item;
+            if (id != 0)
+            {
+                item = bll.ProposalManager.SelectProposal(id);
+            }
+            else
+            {
+                item = new Proposal();
+            }
+            return View(item);
         }
 
         [HttpPost]
@@ -38,14 +47,17 @@ namespace NewTech.Web.Controllers
                 if (item.Id != 0)
                 {
                     bll.ProposalManager.UpdateProposal(item);
+
+                    TempData["message"] = new AlertMessage(string.Format("{0} has been saved", item.Name));
+                    return RedirectToAction("Proposals", "Admin");
                 }
                 else
                 {
                     bll.ProposalManager.InsertProposal(item);
-                }
 
-                TempData["message"] = new AlertMessage(string.Format("{0} has been saved", item.Name));
-                return RedirectToAction("ProposalSucceed");
+                    TempData["message"] = new AlertMessage(string.Format("{0} has been saved", item.Name));
+                    return RedirectToAction("ProposalSucceed");
+                }
             }
             else
             {

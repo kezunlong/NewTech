@@ -99,6 +99,8 @@ hr.header-line {
     font-size: 11px;
 }
 
+span.custominfo { margin:0 15px; float:left; padding-top:6px; color: #808080; }
+
 /******************************HOME PAGE**************************************/
 
 

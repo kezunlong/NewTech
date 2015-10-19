@@ -23,7 +23,7 @@
     </Item>
     <Item Controller="Portfolio" Action="Index" Text="案例展示">
       <Items>
-        <Item Controller="Portfolio" Action="Item" Text="案例" />
+        <Item Controller="Portfolio" Action="Item" Text="" />
       </Items>
     </Item>
     <Item Controller="AboutUS" Action="Company" Text="关于我们">
