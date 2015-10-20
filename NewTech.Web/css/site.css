@@ -90,6 +90,7 @@ footer {
 
 hr.header-line {
     margin-top: 0;
+    border-top: 1px solid #ddd;
 } 
 
 .breadcumb2 {
