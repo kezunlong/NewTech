@@ -62,6 +62,7 @@ namespace NewTech.Web.Controllers
 
         #region Projects
 
+        [Permissions(Permissions.Administrator)]
         public ActionResult Projects(ProjectFilter filter)
         {
             var model = new ProjectsViewModel
@@ -86,7 +87,7 @@ namespace NewTech.Web.Controllers
             return PartialView(model);
         }
 
-
+        [Permissions(Permissions.Administrator)]
         public ActionResult EditProject(int id)
         {
             var model = new ProjectViewModel { Project = bll.ProjectManager.SelectProject(id) };
@@ -95,7 +96,8 @@ namespace NewTech.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateInput(false)] 
+        [ValidateInput(false)]
+        [Permissions(Permissions.Administrator)]
         public ActionResult EditProject([Bind(Prefix = "Project")]Project item, IEnumerable<string> technologies)
         {
             if (ModelState.IsValid)
@@ -120,6 +122,7 @@ namespace NewTech.Web.Controllers
             }
         }
 
+        [Permissions(Permissions.Administrator)]
         public ActionResult CreateProject()
         {
             var model = new ProjectViewModel { Project = new Project() };
@@ -127,6 +130,7 @@ namespace NewTech.Web.Controllers
             return View("EditProject", model);
         }
 
+        [Permissions(Permissions.Administrator)]
         public ActionResult DeleteProject(int id)
         {
             var item = bll.ProjectManager.DeleteProject(id);
@@ -149,6 +153,7 @@ namespace NewTech.Web.Controllers
 
         #region Proposals
 
+        [Permissions(Permissions.Administrator)]
         public ActionResult Proposals(ProposalFilter filter)
         {
             var model = new ProposalsViewModel
@@ -171,6 +176,7 @@ namespace NewTech.Web.Controllers
             return PartialView(model);
         }
 
+        [Permissions(Permissions.Administrator)]
         public ActionResult DeleteProposal(int id)
         {
             var item = bll.ProposalManager.DeleteProposal(id);

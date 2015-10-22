@@ -517,6 +517,7 @@
     <Compile Include="Infrastructure\BreadCrum.cs" />
     <Compile Include="Infrastructure\CustomHelper.cs" />
     <Compile Include="Infrastructure\MvcPaging.cs" />
+    <Compile Include="Infrastructure\PermissionsAttribute.cs" />
     <Compile Include="Infrastructure\SessionHelper.cs" />
     <Compile Include="Models\AlertMessage.cs" />
     <Compile Include="Models\ProjectsViewModel.cs" />
