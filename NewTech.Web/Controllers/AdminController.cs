@@ -1,6 +1,7 @@
 ﻿using Lifepoem.Foundation.Utilities.DBHelpers;
 using Lifepoem.Foundation.Utilities.Helpers;
 using NewTech.Model;
+using NewTech.Web.Infrastructure;
 using NewTech.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,7 @@ namespace NewTech.Web.Controllers
             }
             else
             {
+                SessionHelper.Set(Session, SessionKey.LOGON_USER, user);
                 return RedirectToAction("Projects");
             }
         }

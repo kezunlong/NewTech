@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using NewTech.Model;
+
+<!DOCTYPE html>
 
 <html class="no-js" lang="">
 <head>
@@ -92,6 +94,23 @@
                         </li>
                         <li>@Html.ActionLink("联系我们", "ContactUS", "AboutUS")</li>
                     </ul>
+                    
+                    @{
+                        var user = SessionHelper.Get<User>(Session, SessionKey.LOGON_USER);
+                        if (user != null && user.Role == "Administrator")
+                        {
+                            <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">系统管理 <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>@Html.ActionLink("案例管理", "Projects", "Admin")</li>
+                                        <li>@Html.ActionLink("投标申请管理", "Proposals", "Admin")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        }
+                    }
+
                 </div>
             </div>
         </nav>
@@ -132,7 +151,7 @@
                     <span>|</span>
                     @Html.ActionLink("关于我们", "Company", "AboutUS")
                     <span>|</span>
-                    @Html.ActionLink("联系我们", "Index", "ContactUS")
+                    @Html.ActionLink("联系我们", "ContactUS", "AboutUS")
                 </div>
                 <div class="footcopyright">
                     Copyright © 2000-2015 NewTech Soft - Software outsourcing and Offshore Software development company. All rights reserved.<br />
