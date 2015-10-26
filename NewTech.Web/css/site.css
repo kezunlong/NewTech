@@ -8,7 +8,8 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding: 119px 0 0 0;
+    /*padding: 119px 0 0 0;*/
+    padding: 0;
 }
 
 .body-nocarousel {
@@ -17,9 +18,9 @@ body {
 
 header {
     background: #1e4069 top repeat-x;   /*url(../images/bg.gif) */
-    height: 119px;
+    /*height: 119px;
+    position: fixed;*/
     color: #fff;
-    position: fixed;
     width: 100%;
     z-index: 10000;
 }
@@ -30,22 +31,11 @@ header {
     float: left;
 }
 
-.sublogos {
-    padding: 12px 0px 0px 0px;
-    margin: 0px;
-    float: right;
-}
-
 .s_logo {
     float: left;
     padding: 0px 12px 0px 12px;
     background: url(../img/linebg.gif) repeat-y left;
     height: 54px;
-}
-
-
-.topheader  {
-    margin: 5px 0;
 }
 
 footer {
