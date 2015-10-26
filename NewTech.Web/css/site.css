@@ -31,6 +31,12 @@ header {
     float: left;
 }
 
+.sublogos {
+    padding: 15px 0px 0px 0px;
+    margin: 0px;
+    float: right;
+}
+
 .s_logo {
     float: left;
     padding: 0px 12px 0px 12px;
