@@ -16,5 +16,13 @@ namespace NewTech.BLL
                 return ConfigurationManager.ConnectionStrings["SQLConnString"].ConnectionString;
             }
         }
+
+        public static string AppPath
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["AppPath"];
+            }
+        }
     }
 }

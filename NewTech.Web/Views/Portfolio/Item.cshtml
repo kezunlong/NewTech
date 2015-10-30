@@ -1,4 +1,5 @@
-﻿@model NewTech.Web.Models.ProjectViewModel
+﻿@using NewTech.BLL;
+@model NewTech.Web.Models.ProjectViewModel
 
 @{
     ViewBag.Title = Model.Project.Name;
@@ -9,7 +10,7 @@
         <h3>@Model.Project.Name</h3>
         <hr class="header-line" />
         <div>
-            @Html.Raw(@Model.Project.Contents)
+            @Html.Raw(@Model.Project.Contents.Replace("{AppPath}", AppConfig.AppPath))
         </div>
     </div>
     <div class="col-md-3">
