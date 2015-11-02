@@ -169,28 +169,44 @@ WHERE Id = @Id";
 
         public void UpdateProjectTechnologies(int id, IEnumerable<string> technologies)
         {
-            foreach(string technology in technologies)
+            // delete existing technologies if necessary
+            var existingTechnologies = SelectProjectTechnologies(id);
+            if(existingTechnologies.Count > 0)
             {
-                if(!ExistsProjectTechnology(id, technology))
+                foreach (string technology in existingTechnologies)
                 {
-                    sqlProc.Clear();
-                    sqlProc.CommandText = "INSERT INTO [dbo].[ProjectTechnologies]([ProjectId] ,[TechnologyId]) VALUES(@ProjectId, @TechnologyId)";
-                    sqlProc.CommandType = CommandType.Text;
-                    sqlProc.Parameters.AddWithValue("ProjectId", id);
-                    sqlProc.Parameters.AddWithValue("TechnologyId", technology);
-                    sqlProc.ExecuteNonQuery();
+                    if(technologies == null || !technologies.Contains(technology))
+                    {
+                        DeleteProjectTechnology(id, technology);
+                    }
+                }
+            }
+
+            if (technologies != null)
+            {
+                foreach (string technology in technologies)
+                {
+                    if (!existingTechnologies.Contains(technology))
+                    {
+                        sqlProc.Clear();
+                        sqlProc.CommandText = "INSERT INTO [dbo].[ProjectTechnologies]([ProjectId] ,[TechnologyId]) VALUES(@ProjectId, @TechnologyId)";
+                        sqlProc.CommandType = CommandType.Text;
+                        sqlProc.Parameters.AddWithValue("ProjectId", id);
+                        sqlProc.Parameters.AddWithValue("TechnologyId", technology);
+                        sqlProc.ExecuteNonQuery();
+                    }
                 }
             }
         }
 
-        private bool ExistsProjectTechnology(int id, string technology)
+        private void DeleteProjectTechnology(int id, string technology)
         {
             sqlProc.Clear();
-            sqlProc.CommandText = "SELECT COUNT(*) FROM [dbo].[ProjectTechnologies] WHERE ProjectId = @ProjectId AND TechnologyId = @TechnologyId";
+            sqlProc.CommandText = "DELETE FROM [dbo].[ProjectTechnologies] WHERE ProjectId = @ProjectId AND TechnologyId = @TechnologyId";
             sqlProc.CommandType = CommandType.Text;
             sqlProc.Parameters.AddWithValue("ProjectId", id);
             sqlProc.Parameters.AddWithValue("TechnologyId", technology);
-            return Tools.Convert(sqlProc.ExecuteScalar(), 0) > 0;
+            sqlProc.ExecuteNonQuery();
         }
 
         public List<string> SelectServicedApplicationCategories()

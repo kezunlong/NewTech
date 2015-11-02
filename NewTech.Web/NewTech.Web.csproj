@@ -74,6 +74,7 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -531,36 +532,6 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="fonts\.htaccess" />
-    <Content Include="less\mixins\alerts.less" />
-    <Content Include="less\mixins\background-variant.less" />
-    <Content Include="less\mixins\border-radius.less" />
-    <Content Include="less\mixins\buttons.less" />
-    <Content Include="less\mixins\center-block.less" />
-    <Content Include="less\mixins\clearfix.less" />
-    <Content Include="less\mixins\forms.less" />
-    <Content Include="less\mixins\gradients.less" />
-    <Content Include="less\mixins\grid-framework.less" />
-    <Content Include="less\mixins\grid.less" />
-    <Content Include="less\mixins\hide-text.less" />
-    <Content Include="less\mixins\image.less" />
-    <Content Include="less\mixins\labels.less" />
-    <Content Include="less\mixins\list-group.less" />
-    <Content Include="less\mixins\nav-divider.less" />
-    <Content Include="less\mixins\nav-vertical-align.less" />
-    <Content Include="less\mixins\opacity.less" />
-    <Content Include="less\mixins\pagination.less" />
-    <Content Include="less\mixins\panels.less" />
-    <Content Include="less\mixins\progress-bar.less" />
-    <Content Include="less\mixins\reset-filter.less" />
-    <Content Include="less\mixins\reset-text.less" />
-    <Content Include="less\mixins\resize.less" />
-    <Content Include="less\mixins\responsive-visibility.less" />
-    <Content Include="less\mixins\size.less" />
-    <Content Include="less\mixins\tab-focus.less" />
-    <Content Include="less\mixins\table-row.less" />
-    <Content Include="less\mixins\text-emphasis.less" />
-    <Content Include="less\mixins\text-overflow.less" />
-    <Content Include="less\mixins\vendor-prefixes.less" />
     <Content Include="js\bootstrap\.jscsrc" />
     <Content Include="js\bootstrap\.jshintrc" />
     <Content Include="js\bootstrap\tests\README.md" />
@@ -728,6 +699,7 @@
     <Content Include="less\_pagination.less" />
     <Content Include="Views\Admin\Proposals.cshtml" />
     <Content Include="Views\Admin\ProposalsList.cshtml" />
+    <None Include="Properties\PublishProfiles\NewTech.Web.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

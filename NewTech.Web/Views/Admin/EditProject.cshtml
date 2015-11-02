@@ -31,7 +31,7 @@
                         @foreach (Dict item in items.Skip(skippedItems).Take(displayItems))
                         {
                             <li>
-                                @if (Model.Project.TechnologyRefs.Any(x => x.Id == item.Id))
+                                @if (Model.Project != null && Model.Project.TechnologyRefs != null && Model.Project.TechnologyRefs.Any(x => x.Id == item.Id))
                                 {
                                     <input type="checkbox" checked id="tech_@item.Id" name="technologies" value="@item.Id" />
                                 }
