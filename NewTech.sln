@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewTech.Web", "NewTech.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewTech.Web.Tests", "NewTech.Web.Tests\NewTech.Web.Tests.csproj", "{6DF3BFAB-8E0F-4167-AC40-ACCCF886F797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Foundation.Web", "..\lifepoem-foundation\Lifepoem.Foundation.Web\Lifepoem.Foundation.Web.csproj", "{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lifepoem.Web.Mvc", "..\lifepoem-foundation\Lifepoem.Web.Mvc\Lifepoem.Web.Mvc.csproj", "{2CD95A8D-FAF1-4FE4-8632-5768DF38B032}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

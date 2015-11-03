@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MailTemplate\ProposalMailTemplate.html" />
     <Content Include="App_Data\NewTechnology.sql" />
     <Content Include="css\main.css" />
     <Content Include="css\reset.css" />
@@ -708,7 +709,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\uploads\proposal\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -716,9 +716,9 @@
       <Project>{6c0e0a30-125d-4d8c-bfa1-e0b3e5cfc35f}</Project>
       <Name>Lifepoem.Foundation.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\lifepoem-foundation\Lifepoem.Foundation.Web\Lifepoem.Foundation.Web.csproj">
+    <ProjectReference Include="..\..\lifepoem-foundation\Lifepoem.Web.Mvc\Lifepoem.Web.Mvc.csproj">
       <Project>{2cd95a8d-faf1-4fe4-8632-5768df38b032}</Project>
-      <Name>Lifepoem.Foundation.Web</Name>
+      <Name>Lifepoem.Web.Mvc</Name>
     </ProjectReference>
     <ProjectReference Include="..\NewTech.BLL\NewTech.BLL.csproj">
       <Project>{e96edc66-e56d-4e7b-8326-9a16b22e76eb}</Project>

@@ -1,6 +1,5 @@
 ﻿using Lifepoem.Foundation.Utilities.Helpers;
-using Lifepoem.Foundation.Web.Helpers;
-using Lifepoem.Foundation.Web.MVC;
+using Lifepoem.Web.Mvc.Pagination;
 using NewTech.Model;
 using System;
 using System.Collections.Generic;
