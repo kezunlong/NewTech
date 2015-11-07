@@ -101,6 +101,7 @@
     <Content Include="img\cmmi-logo.png" />
     <Content Include="img\development.png" />
     <Content Include="img\dmca_protected_sml_120m.png" />
+    <Content Include="img\dot.png" />
     <Content Include="img\down-ar.gif" />
     <Content Include="img\header_bg.gif" />
     <Content Include="img\industry.jpg" />
@@ -111,9 +112,9 @@
     <Content Include="img\nasscom-member.png" />
     <Content Include="img\newtech_logo.gif" />
     <Content Include="img\portfolio-1.jpg" />
-    <Content Include="img\portfolio-cdc.jpg" />
     <Content Include="img\portfolio-china-scm.jpg" />
     <Content Include="img\portfolio-china-scm2.jpg" />
+    <Content Include="img\portfolio\cdc.jpg" />
     <Content Include="img\project1.jpg" />
     <Content Include="img\rtarrow.gif" />
     <Content Include="img\sculpting-thoughts.jpg" />
