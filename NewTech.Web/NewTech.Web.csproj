@@ -112,6 +112,8 @@
     <Content Include="img\nasscom-member.png" />
     <Content Include="img\newtech_logo.gif" />
     <Content Include="img\portfolio-1.jpg" />
+    <Content Include="img\portfolio\readingclub.jpg" />
+    <Content Include="img\portfolio\mrb.jpg" />
     <Content Include="img\portfolio\portfolio-cdc.jpg" />
     <Content Include="img\portfolio-china-scm.jpg" />
     <Content Include="img\portfolio-china-scm2.jpg" />
