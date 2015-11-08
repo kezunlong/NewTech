@@ -9,7 +9,7 @@
                 <img src="~/img/project1.jpg" />
             </a>
         </div>
-        <div class="portright">
+        @*<div class="portright">*@
             <span class="port-title">
                 @Html.ActionLink(item.Name, "Item", new { Id = item.Id })
             </span>
@@ -26,7 +26,7 @@
                     查看明细 <span class="icon fa fa-caret-right"></span>
                 </a>    
             </div>
-        </div>
+        @*</div>*@
     </div>
     <hr class="dotted" />
 }

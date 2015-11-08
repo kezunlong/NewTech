@@ -330,6 +330,11 @@ ul.columnflexible
     margin-left: 10px;
 }
 
+.query-result
+{
+    overflow: hidden;
+}
+
 .portbox {
     overflow: hidden;
     
@@ -339,6 +344,7 @@ ul.columnflexible
     float: left;
     border: 1px solid #dedede;
     width: 264px;
+    margin-right:10px;
 }
 
 .portright {
