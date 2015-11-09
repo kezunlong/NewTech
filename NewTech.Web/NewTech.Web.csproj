@@ -112,11 +112,14 @@
     <Content Include="img\nasscom-member.png" />
     <Content Include="img\newtech_logo.gif" />
     <Content Include="img\portfolio-1.jpg" />
+    <Content Include="img\portfolio\bpa.jpg" />
+    <Content Include="img\portfolio\cdc.jpg" />
+    <Content Include="img\portfolio\creditcard.jpg" />
     <Content Include="img\portfolio\readingclub.jpg" />
     <Content Include="img\portfolio\mrb.jpg" />
-    <Content Include="img\portfolio\portfolio-cdc.jpg" />
     <Content Include="img\portfolio-china-scm.jpg" />
     <Content Include="img\portfolio-china-scm2.jpg" />
+    <Content Include="img\portfolio\scm.jpg" />
     <Content Include="img\project1.jpg" />
     <Content Include="img\rtarrow.gif" />
     <Content Include="img\sculpting-thoughts.jpg" />
@@ -703,6 +706,7 @@
     <Content Include="less\_pagination.less" />
     <Content Include="Views\Admin\Proposals.cshtml" />
     <Content Include="Views\Admin\ProposalsList.cshtml" />
+    <Content Include="App_Data\ProjectDocuments\Concur Data Conversion Universal User Manual %28public%29.docx" />
     <None Include="Properties\PublishProfiles\NewTech.Web.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

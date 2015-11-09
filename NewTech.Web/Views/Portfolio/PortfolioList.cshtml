@@ -6,7 +6,7 @@
     <div class="portbox">
         <div class="portleft">
             <a href='@Url.Action("Item", "Portfolio", new { Id = item.Id })'>
-                <img src="~/img/project1.jpg" />
+                <img src="@Url.Content(item.ThumbImage)" />
             </a>
         </div>
         @*<div class="portright">*@

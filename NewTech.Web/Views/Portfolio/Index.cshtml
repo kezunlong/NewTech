@@ -50,9 +50,12 @@
     {
         $("#queryResult").fadeTo(200, 0.2, function () {});
 
+        var now = new Date();
+        var str = (now.getMonth() + 1).toString() + now.getDate().toString() + now.getHours().toString() + now.getMinutes().toString() + now.getSeconds().toString(); // force to refresh and don't use cache data.
+
         $.ajax({
             url: '@Url.Action("PortfolioList")',
-            data: $("form").serialize() + "&page=" + page,
+            data: $("form").serialize() + "&page=" + page + "&time=" + str,
             type: "get",
             success: function (data) {
                 $("#queryResult").html(data);

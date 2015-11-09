@@ -19,7 +19,7 @@ namespace NewTech.DA
             List<Project> list = new List<Project>();
 
             string sql = "SELECT * FROM dbo.Projects WHERE 1 = 1" + filter.GetFilterString();
-            string orderBy = "";
+            string orderBy = "[Order] DESC";
             var table = ExecuteDataTable(sql, option, orderBy);
             foreach (DataRow row in table.Rows)
             {
